@@ -1,0 +1,2 @@
+matricula;cpf_id;nome;codigo_curso;curso;campus;situacao_academica;flag_valido;motivos_rejeicao;fonte
+20261016            ;666.777.888-99;Pedro Henrique Lima                                                                                 ;DIR01     ;Direito                                                                                             ;Campus Centro                                     ;Concluído                     ;N;INTEGRIDADE:situacao_academica;cadastro_academico
