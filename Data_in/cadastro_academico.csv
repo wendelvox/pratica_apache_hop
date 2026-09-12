@@ -1,41 +1,96 @@
 matricula;cpf_id;nome;codigo_curso;curso;campus;situacao_academica
-20261001            ;123.456.789-01;Ana Silva Santos                                                                                    ;CC01      ;Ciência da Computação                                                                               ;Campus Centro                                     ;Ativo                         
-20261002            ;234.567.890-12;Bruno Oliveira Costa                                                                                ;CC01      ;Ciência da Computação                                                                               ;Campus Centro                                     ;Ativo                         
-20261003            ;345.678.901-23;Carolina Mendes Lima                                                                                ;ADM01     ;Administração                                                                                       ;Campus Norte                                      ;Ativo                         
-20261004            ;456.789.012-34;Daniel Souza Pereira                                                                                ;ENG01     ;Engenharia Civil                                                                                    ;Campus Sul                                        ;Ativo                         
-20261005            ;567.890.123-45;Eduarda Ferreira Alves                                                                              ;MED01     ;Medicina                                                                                            ;Campus Centro                                     ;Ativo                         
-20261006            ;678.901.234-56;Felipe Rodrigues Santos                                                                             ;DIR01     ;Direito                                                                                             ;Campus Norte                                      ;Trancado                      
-20261007            ;789.012.345-67;Gabriela Lima Oliveira                                                                              ;CC01      ;Ciência da Computação                                                                               ;Campus Centro                                     ;Ativo                         
-20261008            ;890.123.456-78;Henrique Costa Mendes                                                                               ;ADM01     ;Administração                                                                                       ;Campus Sul                                        ;Ativo                         
-20261009            ;901.234.567-89;Isabella Santos Ferreira                                                                            ;ENG01     ;Engenharia Civil                                                                                    ;Campus Norte                                      ;Concluído                     
-20261010            ;012.345.678-90;João Pedro Alves                                                                                    ;MED01     ;Medicina                                                                                            ;Campus Centro                                     ;Ativo                         
-20261011            ;111.222.333-44;Juliana Pereira Rodrigues                                                                           ;DIR01     ;Direito                                                                                             ;Campus Sul                                        ;Ativo                         
-20261012            ;222.333.444-55;Lucas Oliveira Lima                                                                                 ;CC01      ;Ciência da Computação                                                                               ;Campus Norte                                      ;Ativo                         
-20261013            ;333.444.555-66;Mariana Costa Santos                                                                                ;ADM01     ;Administração                                                                                       ;Campus Centro                                     ;Trancado                      
-20261014            ;444.555.666-77;Matheus Ferreira Mendes                                                                             ;ENG01     ;Engenharia Civil                                                                                    ;Campus Sul                                        ;Ativo                         
-20261015            ;555.666.777-88;Natália Souza Alves                                                                                 ;MED01     ;Medicina                                                                                            ;Campus Norte                                      ;Ativo                         
-20261016            ;666.777.888-99;Pedro Henrique Lima                                                                                 ;DIR01     ;Direito                                                                                             ;Campus Centro                                     ;Concluído                     
-20261017            ;777.888.999-00;Rafaela Mendes Costa                                                                                ;CC01      ;Ciência da Computação                                                                               ;Campus Sul                                        ;Ativo                         
-20261018            ;888.999.000-11;Ricardo Santos Oliveira                                                                             ;ADM01     ;Administração                                                                                       ;Campus Norte                                      ;Ativo                         
-20261019            ;999.000.111-22;Sofia Pereira Rodrigues                                                                             ;ENG01     ;Engenharia Civil                                                                                    ;Campus Centro                                     ;Ativo                         
-20261020            ;101.112.131-41;Thiago Alves Ferreira                                                                               ;MED01     ;Medicina                                                                                            ;Campus Sul                                        ;Trancado                      
-20261021            ;121.314.151-61;Amanda Lima Santos                                                                                  ;DIR01     ;Direito                                                                                             ;Campus Norte                                      ;Ativo                         
-20261022            ;141.516.171-81;André Costa Mendes                                                                                  ;CC01      ;Ciência da Computação                                                                               ;Campus Centro                                     ;Ativo                         
-20261023            ;161.718.192-02;Beatriz Oliveira Souza                                                                              ;ADM01     ;Administração                                                                                       ;Campus Sul                                        ;Ativo                         
-20261024            ;182.021.222-32;Carlos Eduardo Ferreira                                                                             ;ENG01     ;Engenharia Civil                                                                                    ;Campus Norte                                      ;Concluído                     
-20261025            ;202.223.242-52;Daniela Rodrigues Lima                                                                              ;MED01     ;Medicina                                                                                            ;Campus Centro                                     ;Ativo                         
-20261026            ;222.425.262-72;Eduardo Santos Costa                                                                                ;DIR01     ;Direito                                                                                             ;Campus Sul                                        ;Ativo                         
-20261027            ;242.627.282-92;Fernanda Mendes Alves                                                                               ;CC01      ;Ciência da Computação                                                                               ;Campus Norte                                      ;Ativo                         
-20261028            ;262.829.303-13;Gabriel Pereira Oliveira                                                                            ;ADM01     ;Administração                                                                                       ;Campus Centro                                     ;Trancado                      
-20261029            ;283.031.323-33;Helena Lima Ferreira                                                                                ;ENG01     ;Engenharia Civil                                                                                    ;Campus Sul                                        ;Ativo                         
-20261030            ;303.233.343-43;Igor Souza Rodrigues                                                                                ;MED01     ;Medicina                                                                                            ;Campus Norte                                      ;Ativo                         
-20261031            ;323.435.363-53;Júlia Costa Santos                                                                                  ;DIR01     ;Direito                                                                                             ;Campus Centro                                     ;Ativo                         
-20261032            ;343.637.383-73;Leonardo Mendes Oliveira                                                                            ;CC01      ;Ciência da Computação                                                                               ;Campus Sul                                        ;Concluído                     
-20261033            ;363.839.404-14;Larissa Ferreira Lima                                                                               ;ADM01     ;Administração                                                                                       ;Campus Norte                                      ;Ativo                         
-20261034            ;384.041.424-24;Marcelo Alves Costa                                                                                 ;ENG01     ;Engenharia Civil                                                                                    ;Campus Centro                                     ;Ativo                         
-20261035            ;404.243.444-44;Nicole Rodrigues Santos                                                                             ;MED01     ;Medicina                                                                                            ;Campus Sul                                        ;Ativo                         
-20261036            ;424.445.464-54;Otávio Lima Pereira                                                                                 ;DIR01     ;Direito                                                                                             ;Campus Norte                                      ;Trancado                      
-20261037            ;444.647.484-64;Patrícia Souza Mendes                                                                               ;CC01      ;Ciência da Computação                                                                               ;Campus Centro                                     ;Ativo                         
-20261038            ;464.849.505-05;Rafael Costa Ferreira                                                                               ;ADM01     ;Administração                                                                                       ;Campus Sul                                        ;Ativo                         
-20261039            ;485.051.525-15;Sabrina Oliveira Alves                                                                              ;ENG01     ;Engenharia Civil                                                                                    ;Campus Norte                                      ;Concluído                     
-20261040            ;505.253.545-25;Vinícius Mendes Rodrigues                                                                           ;MED01     ;Medicina                                                                                            ;Campus Centro                                     ;Ativo                         
+20230001;11111111101;Joao Silva;C01;Engenharia de Software;Campus Central;ATIVO
+20230002;22222222202;Maria Oliveira;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+20230003;33333333303;Carlos Souza;C03;Administracao;Campus Sul;FORMADO
+20230004;44444444404;Ana Pereira;C04;Direito;Campus Leste;JUBILADO
+20230005;55555555505;Pedro Santos;C01;Engenharia de Software;Campus Central;CANCELADO
+20230006;66666666606;Julia Lima;C02;Ciencia da Computacao;Campus Norte;ATIVO
+20230007;77777777707;Marcos Rocha;C03;Administracao;Campus Sul;TRANCADO
+20230008;88888888808;Fernanda Costa;C04;Direito;Campus Leste;FORMADO
+20230009;99999999909;Lucas Alves;C01;Engenharia de Software;Campus Central;JUBILADO
+20230010;10101010110;Beatriz Dias;C02;Ciencia da Computacao;Campus Norte;CANCELADO
+;12121212112;Rafael Mendes;C01;Engenharia de Software;Campus Central;ATIVO
+;13131313113;Camila Ferreira;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+;14141414114;Bruno Gomes;C03;Administracao;Campus Sul;FORMADO
+;15151515115;Aline Ribeiro;C04;Direito;Campus Leste;JUBILADO
+;16161616116;Thiago Martins;C01;Engenharia de Software;Campus Central;CANCELADO
+20230016;;Patricia Carvalho;C01;Engenharia de Software;Campus Central;ATIVO
+20230017;;Diego Nunes;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+20230018;;Larissa Barbosa;C03;Administracao;Campus Sul;FORMADO
+20230019;;Rodrigo Cardoso;C04;Direito;Campus Leste;JUBILADO
+20230020;;Vanessa Teixeira;C01;Engenharia de Software;Campus Central;CANCELADO
+20230021;17171717117;;C01;Engenharia de Software;Campus Central;ATIVO
+20230022;18181818118;;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+20230023;19191919119;;C03;Administracao;Campus Sul;FORMADO
+20230024;20202020220;;C04;Direito;Campus Leste;JUBILADO
+20230025;21212121221;;C01;Engenharia de Software;Campus Central;CANCELADO
+20230026;22222222222;Joao Silva;C01;Engenharia de Software;;ATIVO
+20230027;23232323223;Maria Oliveira;C02;Ciencia da Computacao;;TRANCADO
+20230028;24242424224;Carlos Souza;C03;Administracao;;FORMADO
+20230029;25252525225;Ana Pereira;C04;Direito;;JUBILADO
+20230030;26262626226;Pedro Santos;C01;Engenharia de Software;;CANCELADO
+20230031;27272727227;Julia Lima;C01;Engenharia de Software;Campus Central;
+20230032;28282828228;Marcos Rocha;C02;Ciencia da Computacao;Campus Norte;
+20230033;29292929229;Fernanda Costa;C03;Administracao;Campus Sul;
+20230034;30303030330;Lucas Alves;C04;Direito;Campus Leste;
+20230035;31313131331;Beatriz Dias;C01;Engenharia de Software;Campus Central;
+20230036;32323232332;Rafael Mendes;;;Campus Central;ATIVO
+20230037;33333333333;Camila Ferreira;;;Campus Norte;TRANCADO
+20230038;34343434334;Bruno Gomes;;;Campus Sul;FORMADO
+20230039;35353535335;Aline Ribeiro;;;Campus Leste;JUBILADO
+20230040;36363636336;Thiago Martins;;;Campus Central;CANCELADO
+1234567;37373737337;Patricia Carvalho;C01;Engenharia de Software;Campus Central;ATIVO
+123456789;38383838338;Diego Nunes;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+1234567A;39393939339;Larissa Barbosa;C03;Administracao;Campus Sul;FORMADO
+123456;40404040440;Rodrigo Cardoso;C04;Direito;Campus Leste;JUBILADO
+1234567890;41414141441;Vanessa Teixeira;C01;Engenharia de Software;Campus Central;CANCELADO
+ABCDEF12;42424242442;Joao Silva;C02;Ciencia da Computacao;Campus Norte;ATIVO
+2023001;43434343443;Maria Oliveira;C03;Administracao;Campus Sul;TRANCADO
+202300123;44444444444;Carlos Souza;C04;Direito;Campus Leste;FORMADO
+2023 0001;45454545445;Ana Pereira;C01;Engenharia de Software;Campus Central;JUBILADO
+20230001X;46464646446;Pedro Santos;C02;Ciencia da Computacao;Campus Norte;CANCELADO
+20230056;1234567890;Rafael Mendes;C01;Engenharia de Software;Campus Central;ATIVO
+20230057;123456789012;Camila Ferreira;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+20230058;1234567890A;Bruno Gomes;C03;Administracao;Campus Sul;FORMADO
+20230059;123456789;Aline Ribeiro;C04;Direito;Campus Leste;JUBILADO
+20230060;1234567890123;Thiago Martins;C01;Engenharia de Software;Campus Central;CANCELADO
+20230061;1111111111A;Patricia Carvalho;C02;Ciencia da Computacao;Campus Norte;ATIVO
+20230062;987654321;Diego Nunes;C03;Administracao;Campus Sul;TRANCADO
+20230063;987654321098;Larissa Barbosa;C04;Direito;Campus Leste;FORMADO
+20230064;5555555555X;Rodrigo Cardoso;C01;Engenharia de Software;Campus Central;JUBILADO
+20230065;444444444444;Vanessa Teixeira;C02;Ciencia da Computacao;Campus Norte;CANCELADO
+20230066;123456789;Joao Silva;C03;Administracao;Campus Sul;ATIVO
+20230067;12345678901234;Maria Oliveira;C04;Direito;Campus Leste;TRANCADO
+20230068;1234567890B;Carlos Souza;C01;Engenharia de Software;Campus Central;FORMADO
+20230069;123456789012C;Ana Pereira;C02;Ciencia da Computacao;Campus Norte;JUBILADO
+20230070;123456789;Pedro Santos;C03;Administracao;Campus Sul;CANCELADO
+20230071;47474747447;Julia Lima;C01;Engenharia de Software;Campus Central;DESISTENTE
+20230072;48484848448;Marcos Rocha;C02;Ciencia da Computacao;Campus Norte;EVADIDO
+20230073;49494949449;Fernanda Costa;C03;Administracao;Campus Sul;ATIVO!
+20230074;50505050550;Lucas Alves;C04;Direito;Campus Leste;TRANCADO 
+20230075;51515151551;Beatriz Dias;C01;Engenharia de Software;Campus Central;formado
+20230076;52525252552;Rafael Mendes;C02;Ciencia da Computacao;Campus Norte;Ativo
+20230077;53535353553;Camila Ferreira;C03;Administracao;Campus Sul;Cancelado
+20230078;54545454554;Bruno Gomes;C04;Direito;Campus Leste;Jubilado
+20230079;55555555555;Aline Ribeiro;C01;Engenharia de Software;Campus Central;ATIVO 
+20230080;56565656556;Thiago Martins;C02;Ciencia da Computacao;Campus Norte;INADIMPLENTE
+20230081;57575757557;Patricia Carvalho;C03;Administracao;Campus Sul;ATIVO
+20230082;58585858558;Diego Nunes;C04;Direito;Campus Leste;TRANC
+20230083;59595959559;Larissa Barbosa;C01;Engenharia de Software;Campus Central;FORM
+20230084;60606060660;Rodrigo Cardoso;C02;Ciencia da Computacao;Campus Norte;JUB
+20230085;61616161661;Vanessa Teixeira;C03;Administracao;Campus Sul;CANC
+20230086;62626262662;Joao Silva;C01;Engenharia de Software;Campus Central;ATIVO
+20230087;62626262662;Maria Oliveira;C02;Ciencia da Computacao;Campus Norte;TRANCADO
+20230088;63636363663;Carlos Souza;C03;Administracao;Campus Sul;FORMADO
+20230089;63636363663;Ana Pereira;C04;Direito;Campus Leste;JUBILADO
+20230090;64646464664;Pedro Santos;C01;Engenharia de Software;Campus Central;CANCELADO
+20230091;64646464664;Julia Lima;C02;Ciencia da Computacao;Campus Norte;ATIVO
+20230092;65656565665;Marcos Rocha;C03;Administracao;Campus Sul;TRANCADO
+20230093;65656565665;Fernanda Costa;C04;Direito;Campus Leste;FORMADO
+20230094;66666666666;Lucas Alves;C01;Engenharia de Software;Campus Central;JUBILADO
+20230095;66666666666;Beatriz Dias;C02;Ciencia da Computacao;Campus Norte;CANCELADO
+20230096;67676767667;Rafael Mendes;C03;Administracao;Campus Sul;ATIVO
+20230097;67676767667;Camila Ferreira;C04;Direito;Campus Leste;TRANCADO
+20230098;68686868668;Bruno Gomes;C01;Engenharia de Software;Campus Central;FORMADO
+20230099;68686868668;Aline Ribeiro;C02;Ciencia da Computacao;Campus Norte;JUBILADO
+20230100;69696969669;Thiago Martins;C03;Administracao;Campus Sul;CANCELADO

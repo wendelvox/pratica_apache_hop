@@ -1,2 +1,22 @@
 matricula;cpf_id;nome;codigo_curso;curso;campus;situacao_academica;flag_valido;motivos_rejeicao;fonte
-20261016            ;666.777.888-99;Pedro Henrique Lima                                                                                 ;DIR01     ;Direito                                                                                             ;Campus Centro                                     ;Concluído                     ;N;INTEGRIDADE:situacao_academica;cadastro_academico
+;13131313113;Camila Ferreira;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;CAMPO_OBRIGATORIO:matricula;cadastro_academico
+;16161616116;Thiago Martins;C01;Engenharia de Software;Campus Central;CANCELADO;N;CAMPO_OBRIGATORIO:matricula;cadastro_academico
+20230018;;Larissa Barbosa;C03;Administracao;Campus Sul;FORMADO;N;CAMPO_OBRIGATORIO:cpf_id;cadastro_academico
+20230021;17171717117;;C01;Engenharia de Software;Campus Central;ATIVO;N;CAMPO_OBRIGATORIO:nome;cadastro_academico
+20230024;20202020220;;C04;Direito;Campus Leste;JUBILADO;N;CAMPO_OBRIGATORIO:nome;cadastro_academico
+20230027;23232323223;Maria Oliveira;C02;Ciencia da Computacao;;TRANCADO;N;CAMPO_OBRIGATORIO:campus;cadastro_academico
+20230030;26262626226;Pedro Santos;C01;Engenharia de Software;;CANCELADO;N;CAMPO_OBRIGATORIO:campus;cadastro_academico
+20230033;29292929229;Fernanda Costa;C03;Administracao;Campus Sul;;N;CAMPO_OBRIGATORIO:situacao_academica;cadastro_academico
+20230036;32323232332;Rafael Mendes;;;Campus Central;ATIVO;N;MATRICULA_SEM_CURSO;cadastro_academico
+20230039;35353535335;Aline Ribeiro;;;Campus Leste;JUBILADO;N;MATRICULA_SEM_CURSO;cadastro_academico
+123456789;38383838338;Diego Nunes;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;INTEGRIDADE:matricula;cadastro_academico
+1234567890;41414141441;Vanessa Teixeira;C01;Engenharia de Software;Campus Central;CANCELADO;N;INTEGRIDADE:matricula;cadastro_academico
+202300123;44444444444;Carlos Souza;C04;Direito;Campus Leste;FORMADO;N;INTEGRIDADE:matricula;cadastro_academico
+20230056;1234567890;Rafael Mendes;C01;Engenharia de Software;Campus Central;ATIVO;N;INTEGRIDADE:cpf_id;cadastro_academico
+20230059;123456789;Aline Ribeiro;C04;Direito;Campus Leste;JUBILADO;N;INTEGRIDADE:cpf_id;cadastro_academico
+20230062;987654321;Diego Nunes;C03;Administracao;Campus Sul;TRANCADO;N;INTEGRIDADE:cpf_id;cadastro_academico
+20230065;444444444444;Vanessa Teixeira;C02;Ciencia da Computacao;Campus Norte;CANCELADO;N;INTEGRIDADE:cpf_id;cadastro_academico
+20230068;1234567890B;Carlos Souza;C01;Engenharia de Software;Campus Central;FORMADO;N;INTEGRIDADE:cpf_id;cadastro_academico
+20230071;47474747447;Julia Lima;C01;Engenharia de Software;Campus Central;DESISTENTE;N;INTEGRIDADE:situacao_academica;cadastro_academico
+20230080;56565656556;Thiago Martins;C02;Ciencia da Computacao;Campus Norte;INADIMPLENTE;N;INTEGRIDADE:situacao_academica;cadastro_academico
+20230083;59595959559;Larissa Barbosa;C01;Engenharia de Software;Campus Central;FORM;N;INTEGRIDADE:situacao_academica;cadastro_academico

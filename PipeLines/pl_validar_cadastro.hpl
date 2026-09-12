@@ -12,8 +12,169 @@
     <created_user>-</created_user>
     <modified_user>-</modified_user>
     <created_date>2026/08/29 18:40:00.000</created_date>
-    <modified_date>2026/08/29 18:40:00.000</modified_date>
+    <modified_date>2026/09/13 14:00:00.000</modified_date>
   </info>
+  <transform>
+    <type>CSVInput</type>
+    <name>Ler catalogo de cursos</name>
+    <filename>${PROJECT_HOME}/Data_in/catalogo_cursos.csv</filename>
+    <include_filename>N</include_filename>
+    <rownum_field/>
+    <header>Y</header>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <encoding/>
+    <newline_possible>N</newline_possible>
+    <schemaDefinition/>
+    <ignoreFields>N</ignoreFields>
+    <fields>
+      <field>
+        <name>codigo_curso</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nome_curso</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>112</yloc>
+    </GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>CSVInput</type>
+    <name>Ler cadastro academico</name>
+    <filename>${PROJECT_HOME}/Data_in/cadastro_academico.csv</filename>
+    <include_filename>N</include_filename>
+    <rownum_field/>
+    <header>Y</header>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <encoding/>
+    <newline_possible>N</newline_possible>
+    <schemaDefinition/>
+    <ignoreFields>N</ignoreFields>
+    <fields>
+      <field>
+        <name>matricula</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>cpf_id</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nome</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>codigo_curso</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>curso</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>campus</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>situacao_academica</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>304</yloc>
+    </GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
   <transform>
     <type>MemoryGroupBy</type>
     <name>Contar por matricula</name>
@@ -34,10 +195,10 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>368</yloc>
+      <xloc>416</xloc>
+      <yloc>192</yloc>
     </GUI>
-    <description/>
+    <description>Gera tabela de contagem por matricula.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -64,10 +225,10 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>528</yloc>
+      <xloc>432</xloc>
+      <yloc>448</yloc>
     </GUI>
-    <description/>
+    <description>Gera tabela de contagem por CPF.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -97,10 +258,10 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>192</yloc>
+      <xloc>416</xloc>
+      <yloc>304</yloc>
     </GUI>
-    <description/>
+    <description>Injeta qtd_matricula no fluxo principal.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -130,10 +291,10 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>320</yloc>
+      <xloc>816</xloc>
+      <yloc>304</yloc>
     </GUI>
-    <description/>
+    <description>Injeta qtd_cpf no fluxo principal.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -163,10 +324,10 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>480</xloc>
+      <xloc>816</xloc>
       <yloc>112</yloc>
     </GUI>
-    <description/>
+    <description>Busca nome oficial do curso no catalogo.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -223,6 +384,7 @@ campus = txt(campus);
 situacao_academica = nrm(situacao_academica);
 var cursoOficial = txt(curso_oficial);
 
+
 if (matricula === "") motivos.push("CAMPO_OBRIGATORIO:matricula");
 if (cpf_id === "") motivos.push("CAMPO_OBRIGATORIO:cpf_id");
 if (nome === "") motivos.push("CAMPO_OBRIGATORIO:nome");
@@ -236,7 +398,7 @@ if (situacao_academica !== "" &amp;&amp; ",ATIVO,TRANCADO,FORMADO,JUBILADO,CANCE
   motivos.push("INTEGRIDADE:situacao_academica");
 }
 
-if (toInt(qtd_matricula) &gt; 1) motivos.push("ESTUDANTE_DUPLICADO:matricula");
+if (toInt(qtd_matricula) > 1) motivos.push("ESTUDANTE_DUPLICADO:matricula");
 if (cpf_id !== "" &amp;&amp; toInt(qtd_cpf) > 1) motivos.push("ESTUDANTE_DUPLICADO:cpf_id");
 
 if ((codigo_curso !== "" || curso !== "") &amp;&amp; cursoOficial === "") motivos.push("CURSO_NAO_ENCONTRADO");
@@ -261,72 +423,72 @@ var fonte = "cadastro_academico";
         <replace>N</replace>
       </field>
       <field>
-        <name>cursoOficial</name>
-        <rename>cursoOficial</rename>
+        <name>cpf_id</name>
+        <rename>cpf_id</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>flag_valido</name>
-        <rename>flag_valido</rename>
+        <name>nome</name>
+        <rename>nome</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>txt</name>
-        <rename>txt</rename>
+        <name>codigo_curso</name>
+        <rename>codigo_curso</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>nrm</name>
-        <rename>nrm</rename>
+        <name>curso</name>
+        <rename>curso</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>toInt</name>
-        <rename>toInt</rename>
+        <name>campus</name>
+        <rename>campus</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>parseDataMulti</name>
-        <rename>parseDataMulti</rename>
+        <name>situacao_academica</name>
+        <rename>situacao_academica</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>periodoValido</name>
-        <rename>periodoValido</rename>
-        <type>String</type>
+        <name>qtd_matricula</name>
+        <rename>qtd_matricula</rename>
+        <type>Integer</type>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>motivos</name>
-        <rename>motivos</rename>
-        <type>String</type>
+        <name>qtd_cpf</name>
+        <rename>qtd_cpf</rename>
+        <type>Integer</type>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <replace>N</replace>
       </field>
       <field>
-        <name>cursoOficial</name>
-        <rename>cursoOficial</rename>
+        <name>curso_oficial</name>
+        <rename>curso_oficial</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -361,7 +523,7 @@ var fonte = "cadastro_academico";
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>736</xloc>
+      <xloc>1008</xloc>
       <yloc>112</yloc>
     </GUI>
     <description>Duplicados, curso, obrigatorios e integridade.</description>
@@ -392,13 +554,13 @@ var fonte = "cadastro_academico";
         <conditions/>
       </condition>
     </compare>
-    <send_true_to>Grava cadastros validos</send_true_to>
+    <send_true_to>Select values</send_true_to>
     <send_false_to>Gravar cadastro rejeitados</send_false_to>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>944</xloc>
-      <yloc>112</yloc>
+      <xloc>1008</xloc>
+      <yloc>256</yloc>
     </GUI>
     <description>Separa registros validos de rejeitados.</description>
     <partitioning>
@@ -576,8 +738,8 @@ var fonte = "cadastro_academico";
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1200</xloc>
-      <yloc>288</yloc>
+      <xloc>1232</xloc>
+      <yloc>416</yloc>
     </GUI>
     <description>Registros rejeitados com motivos.</description>
     <partitioning>
@@ -587,51 +749,37 @@ var fonte = "cadastro_academico";
     <attributes/>
   </transform>
   <transform>
-    <type>CSVInput</type>
-    <name>Ler catalogo de cursos</name>
-    <filename>${PROJECT_HOME}/Data_in/catalogo_cursos.csv</filename>
-    <include_filename>N</include_filename>
-    <rownum_field/>
-    <header>Y</header>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>N</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <encoding/>
-    <newline_possible>N</newline_possible>
-    <schemaDefinition/>
-    <ignoreFields>N</ignoreFields>
-    <fields>
-      <field>
-        <name>codigo_curso</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>nome_curso</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
+    <type>TableOutput</type>
+    <name>Table output</name>
+    <connection>Desenvolvimento</connection>
+    <schema>public</schema>
+    <table>historico_academico</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <only_when_have_rows>N</only_when_have_rows>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <specify_fields>N</specify_fields>
+    <auto_update_table_structure>N</auto_update_table_structure>
+    <always_drop_and_recreate>N</always_drop_and_recreate>
+    <add_columns>N</add_columns>
+    <drop_columns>N</drop_columns>
+    <change_column_types>N</change_column_types>
+    <fields/>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>112</yloc>
+      <xloc>1440</xloc>
+      <yloc>256</yloc>
     </GUI>
     <partitioning>
       <method>none</method>
@@ -640,258 +788,58 @@ var fonte = "cadastro_academico";
     <attributes/>
   </transform>
   <transform>
-    <type>CSVInput</type>
-    <name>Ler cadastro academico</name>
-    <filename>${PROJECT_HOME}/Data_in/cadastro_academico.csv</filename>
-    <include_filename>N</include_filename>
-    <rownum_field/>
-    <header>Y</header>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>N</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <encoding/>
-    <newline_possible>N</newline_possible>
-    <schemaDefinition/>
-    <ignoreFields>N</ignoreFields>
+    <type>SelectValues</type>
+    <name>Select values</name>
     <fields>
       <field>
         <name>matricula</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
       <field>
         <name>cpf_id</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
       <field>
         <name>nome</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
       <field>
         <name>codigo_curso</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
       <field>
-        <name>curso</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <name>curso_oficial</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
       <field>
         <name>campus</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
       <field>
         <name>situacao_academica</name>
-        <length>-1</length>
-        <type>String</type>
-        <format/>
-        <trim_type>none</trim_type>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>
+      <select_unspecified>N</select_unspecified>
     </fields>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>368</yloc>
-    </GUI>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-  </transform>
-  <transform>
-    <type>TextFileOutput</type>
-    <name>Grava cadastros validos</name>
-    <compression>None</compression>
-    <create_parent_folder>Y</create_parent_folder>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <schema_definition/>
-    <ignore_fields>N</ignore_fields>
-    <file>
-      <name>${PROJECT_HOME}/Data_out/validos_cadastros.csv</name>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extension/>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery/>
-    </file>
-    <fields>
-      <field>
-        <name>matricula</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>cpf_id</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>nome</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>codigo_curso</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>curso</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>campus</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>situacao_academica</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-      <field>
-        <name>flag_valido</name>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <roundingType>half_even</roundingType>
-      </field>
-    </fields>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-    <GUI>
-      <xloc>1184</xloc>
-      <yloc>32</yloc>
+      <xloc>1248</xloc>
+      <yloc>256</yloc>
     </GUI>
     <partitioning>
       <method>none</method>
@@ -900,6 +848,21 @@ var fonte = "cadastro_academico";
     <attributes/>
   </transform>
   <order>
+    <hop>
+      <from>Ler cadastro academico</from>
+      <to>Contar por matricula</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ler cadastro academico</from>
+      <to>Contar por CPF</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ler cadastro academico</from>
+      <to>Lookup qtd matricula</to>
+      <enabled>Y</enabled>
+    </hop>
     <hop>
       <from>Contar por matricula</from>
       <to>Lookup qtd matricula</to>
@@ -921,6 +884,11 @@ var fonte = "cadastro_academico";
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Ler catalogo de cursos</from>
+      <to>Lookup curso oficial</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Lookup curso oficial</from>
       <to>Aplicar regras cadastro</to>
       <enabled>Y</enabled>
@@ -936,55 +904,21 @@ var fonte = "cadastro_academico";
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ler catalogo de cursos</from>
-      <to>Lookup curso oficial</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Ler cadastro academico</from>
-      <to>Lookup qtd matricula</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Ler cadastro academico</from>
-      <to>Contar por matricula</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Ler cadastro academico</from>
-      <to>Contar por CPF</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Cadastro valido?</from>
-      <to>Grava cadastros validos</to>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <notepads>
-    <notepad>
-      <note>1) Conta duplicidade de matricula e CPF
-2) Confere codigo de curso no catalogo
-3) Rejeita campos vazios e quebras de integridade</note>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>14</fontcolorred>
-      <fontcolorgreen>55</fontcolorgreen>
-      <fontcolorblue>95</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>250</backgroundcolorgreen>
-      <backgroundcolorblue>220</backgroundcolorblue>
-      <bordercolorred>180</bordercolorred>
-      <bordercolorgreen>160</bordercolorgreen>
-      <bordercolorblue>80</bordercolorblue>
-      <xloc>96</xloc>
-      <yloc>8</yloc>
-      <width>420</width>
-      <height>-1</height>
-    </notepad>
-  </notepads>
-  <attributes/>
+  <notepads/>
+  <attributes>
+    <group>
+      <name>debug_plugin</name>
+    </group>
+  </attributes>
   <transform_error_handling/>
 </pipeline>

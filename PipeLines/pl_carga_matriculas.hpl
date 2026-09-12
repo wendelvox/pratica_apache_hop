@@ -15,20 +15,106 @@
     <modified_date>2026/09/11 20:05:08.259</modified_date>
   </info>
   <transform>
-    <type>TableInput</type>
-    <name>Table input</name>
-    <sql>SELECT * FROM public.discentes</sql>
-    <limit>0</limit>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <connection>Desenvolvimento</connection>
-    <lookup/>
-    <sql_from_file/>
+    <type>CSVInput</type>
+    <name>CSV file input</name>
+    <filename>${PROJECT_HOME}/Data_in/cadastro_academico.csv</filename>
+    <include_filename>N</include_filename>
+    <rownum_field/>
+    <header>Y</header>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <encoding/>
+    <newline_possible>N</newline_possible>
+    <schemaDefinition/>
+    <ignoreFields>N</ignoreFields>
+    <fields>
+      <field>
+        <name>matricula</name>
+        <length>10</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+      <field>
+        <name>cpf_id</name>
+        <length>13</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+      <field>
+        <name>nome</name>
+        <length>22</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+      <field>
+        <name>codigo_curso</name>
+        <length>20</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+      <field>
+        <name>campus</name>
+        <length>14</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+      <field>
+        <name>situacao_academica</name>
+        <length>14</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+      <field>
+        <name>curso</name>
+        <length>22</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+      </field>
+    </fields>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>176</yloc>
+      <xloc>0</xloc>
+      <yloc>144</yloc>
     </GUI>
     <partitioning>
       <method>none</method>
@@ -37,45 +123,223 @@
     <attributes/>
   </transform>
   <transform>
-    <type>TextFileOutput</type>
-    <name>Text file output</name>
-    <compression>None</compression>
-    <create_parent_folder>Y</create_parent_folder>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <schema_definition/>
-    <ignore_fields>N</ignore_fields>
-    <file>
-      <name>${PROJECT_HOME}/Data_in/cadastro_academico.csv</name>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extension/>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery/>
-    </file>
+    <type>SelectValues</type>
+    <name>Select values</name>
+    <fields>
+      <field>
+        <name>matricula</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>cpf_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>nome</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>codigo_curso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>curso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>campus</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>situacao_academica</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>matricula</name>
+        <rename>matricula</rename>
+        <type>String</type>
+        <length>20</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>cpf_id</name>
+        <rename>cpf_id</rename>
+        <type>String</type>
+        <length>18</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>nome</name>
+        <rename>nome</rename>
+        <type>String</type>
+        <length>60</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>codigo_curso</name>
+        <rename>codigo_curso</rename>
+        <type>String</type>
+        <length>5</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>curso</name>
+        <rename>curso</rename>
+        <type>String</type>
+        <length>60</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>campus</name>
+        <rename>campus</rename>
+        <type>String</type>
+        <length>60</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>situacao_academica</name>
+        <rename>situacao_academica</rename>
+        <type>String</type>
+        <length>60</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+    </fields>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>144</yloc>
+    </GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>TableOutput</type>
+    <name>Table output</name>
+    <connection>Desenvolvimento</connection>
+    <schema>public</schema>
+    <table>discente</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <only_when_have_rows>N</only_when_have_rows>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <specify_fields>N</specify_fields>
+    <auto_update_table_structure>N</auto_update_table_structure>
+    <always_drop_and_recreate>N</always_drop_and_recreate>
+    <add_columns>N</add_columns>
+    <drop_columns>N</drop_columns>
+    <change_column_types>N</change_column_types>
     <fields/>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>176</yloc>
+      <xloc>496</xloc>
+      <yloc>144</yloc>
     </GUI>
     <partitioning>
       <method>none</method>
@@ -85,8 +349,13 @@
   </transform>
   <order>
     <hop>
-      <from>Table input</from>
-      <to>Text file output</to>
+      <from>CSV file input</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>

@@ -22,7 +22,7 @@
       <description/>
       <type>SPECIAL</type>
       <attributes/>
-      <xloc>80</xloc>
+      <xloc>144</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -49,7 +49,7 @@
       <name>pl_carga_cursos.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>240</xloc>
+      <xloc>304</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -76,7 +76,7 @@
       <name>pl_carga_matriculas.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>448</xloc>
+      <xloc>512</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -103,7 +103,7 @@
       <name>pl_validar_cadastro.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>656</xloc>
+      <xloc>720</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -115,7 +115,7 @@
       <description/>
       <type>ABORT</type>
       <attributes/>
-      <xloc>448</xloc>
+      <xloc>512</xloc>
       <yloc>384</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -125,7 +125,7 @@
       <description/>
       <type>SUCCESS</type>
       <attributes/>
-      <xloc>1024</xloc>
+      <xloc>1088</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -138,7 +138,7 @@
       <description/>
       <type>WRITE_TO_LOG</type>
       <attributes/>
-      <xloc>240</xloc>
+      <xloc>304</xloc>
       <yloc>288</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -151,7 +151,7 @@
       <description/>
       <type>WRITE_TO_LOG</type>
       <attributes/>
-      <xloc>448</xloc>
+      <xloc>512</xloc>
       <yloc>272</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -164,7 +164,7 @@
       <description/>
       <type>WRITE_TO_LOG</type>
       <attributes/>
-      <xloc>656</xloc>
+      <xloc>720</xloc>
       <yloc>288</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -177,7 +177,7 @@
       <description/>
       <type>WRITE_TO_LOG</type>
       <attributes/>
-      <xloc>832</xloc>
+      <xloc>896</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>

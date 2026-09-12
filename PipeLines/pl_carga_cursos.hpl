@@ -15,20 +15,51 @@
     <modified_date>2026/09/11 19:52:45.745</modified_date>
   </info>
   <transform>
-    <type>TableInput</type>
-    <name>Table input</name>
-    <sql>SELECT * FROM cursos</sql>
-    <limit>0</limit>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <connection>Desenvolvimento</connection>
-    <lookup/>
-    <sql_from_file/>
+    <type>CSVInput</type>
+    <name>CSV file input</name>
+    <filename>${PROJECT_HOME}/Data_in/catalogo_cursos.csv</filename>
+    <include_filename>N</include_filename>
+    <rownum_field/>
+    <header>Y</header>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <encoding/>
+    <newline_possible>N</newline_possible>
+    <schemaDefinition/>
+    <ignoreFields>N</ignoreFields>
+    <fields>
+      <field>
+        <name>codigo_curso</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>right</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nome_curso</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>right</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>192</yloc>
+      <xloc>176</xloc>
+      <yloc>128</yloc>
     </GUI>
     <partitioning>
       <method>none</method>
@@ -37,45 +68,103 @@
     <attributes/>
   </transform>
   <transform>
-    <type>TextFileOutput</type>
-    <name>catalogo_cursos</name>
-    <compression>None</compression>
-    <create_parent_folder>Y</create_parent_folder>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <schema_definition/>
-    <ignore_fields>N</ignore_fields>
-    <file>
-      <name>${PROJECT_HOME}/Data_in/catalogo_cursos.csv</name>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extension/>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery/>
-    </file>
+    <type>TableOutput</type>
+    <name>Table output</name>
+    <connection>Desenvolvimento</connection>
+    <schema>public</schema>
+    <table>cursos</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <only_when_have_rows>N</only_when_have_rows>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <specify_fields>N</specify_fields>
+    <auto_update_table_structure>N</auto_update_table_structure>
+    <always_drop_and_recreate>N</always_drop_and_recreate>
+    <add_columns>N</add_columns>
+    <drop_columns>N</drop_columns>
+    <change_column_types>N</change_column_types>
     <fields/>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>192</yloc>
+      <xloc>608</xloc>
+      <yloc>128</yloc>
+    </GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>SelectValues</type>
+    <name>Select values</name>
+    <fields>
+      <field>
+        <name>codigo_curso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <name>nome_curso</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>codigo_curso</name>
+        <rename>codigo_curso</rename>
+        <type>String</type>
+        <length>6</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+      <meta>
+        <name>nome_curso</name>
+        <rename>nome_curso</rename>
+        <type>String</type>
+        <length>60</length>
+        <precision>-2</precision>
+        <storage_type/>
+        <conversion_mask/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <encoding/>
+        <roundingType>half_even</roundingType>
+      </meta>
+    </fields>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>128</yloc>
     </GUI>
     <partitioning>
       <method>none</method>
@@ -85,8 +174,13 @@
   </transform>
   <order>
     <hop>
-      <from>Table input</from>
-      <to>catalogo_cursos</to>
+      <from>CSV file input</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
