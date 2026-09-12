@@ -48,7 +48,7 @@
     <header>Y</header>
     <footer>N</footer>
     <format>DOS</format>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
