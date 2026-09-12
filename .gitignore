@@ -1,0 +1,11 @@
+# Segredos e configuracoes locais
+.env
+.env.*
+!.env.example
+
+# Logs gerados em execucao
+Logs/*.log
+
+# Saidas temporarias do Apache Hop
+Data_out/*.tmp
+Data_out/*.part
