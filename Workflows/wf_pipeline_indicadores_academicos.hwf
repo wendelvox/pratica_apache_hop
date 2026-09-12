@@ -76,7 +76,7 @@
       <name>pl_carga_matriculas.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>480</xloc>
+      <xloc>448</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -103,7 +103,7 @@
       <name>pl_validar_cadastro.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>704</xloc>
+      <xloc>656</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -115,8 +115,8 @@
       <description/>
       <type>ABORT</type>
       <attributes/>
-      <xloc>480</xloc>
-      <yloc>352</yloc>
+      <xloc>448</xloc>
+      <yloc>384</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
     </action>
@@ -125,7 +125,59 @@
       <description/>
       <type>SUCCESS</type>
       <attributes/>
-      <xloc>912</xloc>
+      <xloc>1024</xloc>
+      <yloc>144</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro na carga do catalogo de cursos. Consulte o log do pipeline.</logmessage>
+      <name>LOG - Cursos FALHA</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>240</xloc>
+      <yloc>288</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro na carga dos dados academicos. Consulte o log do pipeline.</logmessage>
+      <name>LOG - Matriculas FALHA</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>448</xloc>
+      <yloc>272</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro na validacao do cadastro academico. Consulte o log do pipeline.</logmessage>
+      <name>LOG - Validacao FALHA</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>656</xloc>
+      <yloc>288</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Basic</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[SUCESSO] Validacao do cadastro academico concluida.</logmessage>
+      <name>LOG - Validacao OK</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>832</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -155,29 +207,57 @@
     </hop>
     <hop>
       <from>pl_carga_cursos.hpl</from>
-      <to>Abort</to>
+      <to>LOG - Cursos FALHA</to>
       <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>LOG - Cursos FALHA</from>
+      <to>Abort</to>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>pl_carga_matriculas.hpl</from>
-      <to>Abort</to>
+      <to>LOG - Matriculas FALHA</to>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pl_validar_cadastro.hpl</from>
-      <to>Success</to>
+      <from>LOG - Matriculas FALHA</from>
+      <to>Abort</to>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>pl_validar_cadastro.hpl</from>
-      <to>Abort</to>
+      <to>LOG - Validacao FALHA</to>
       <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>LOG - Validacao FALHA</from>
+      <to>Abort</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pl_validar_cadastro.hpl</from>
+      <to>LOG - Validacao OK</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>LOG - Validacao OK</from>
+      <to>Success</to>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
