@@ -22,7 +22,7 @@
       <description/>
       <type>SPECIAL</type>
       <attributes/>
-      <xloc>48</xloc>
+      <xloc>80</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -33,13 +33,13 @@
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <create_parent_folder>N</create_parent_folder>
-      <set_logfile>N</set_logfile>
+      <create_parent_folder>Y</create_parent_folder>
+      <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <wait_until_finished>Y</wait_until_finished>
       <parameters>
@@ -49,7 +49,7 @@
       <name>pl_carga_cursos.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>272</xloc>
+      <xloc>240</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -60,13 +60,13 @@
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <create_parent_folder>N</create_parent_folder>
-      <set_logfile>N</set_logfile>
+      <create_parent_folder>Y</create_parent_folder>
+      <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <wait_until_finished>Y</wait_until_finished>
       <parameters>
@@ -76,7 +76,7 @@
       <name>pl_carga_matriculas.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>496</xloc>
+      <xloc>480</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -87,13 +87,13 @@
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <create_parent_folder>N</create_parent_folder>
-      <set_logfile>N</set_logfile>
+      <create_parent_folder>Y</create_parent_folder>
+      <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <wait_until_finished>Y</wait_until_finished>
       <parameters>
@@ -103,7 +103,29 @@
       <name>pl_validar_cadastro.hpl</name>
       <type>PIPELINE</type>
       <attributes/>
-      <xloc>784</xloc>
+      <xloc>704</xloc>
+      <yloc>144</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <message>Falha na execução do workflow de indicadores acadêmicos. Consulte os arquivos em ${PROJECT_HOME}/Logs/pipelines/.</message>
+      <always_log_rows>N</always_log_rows>
+      <name>Abort</name>
+      <description/>
+      <type>ABORT</type>
+      <attributes/>
+      <xloc>480</xloc>
+      <yloc>352</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <attributes/>
+      <xloc>912</xloc>
       <yloc>144</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
@@ -131,7 +153,39 @@
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>pl_carga_cursos.hpl</from>
+      <to>Abort</to>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pl_carga_matriculas.hpl</from>
+      <to>Abort</to>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pl_validar_cadastro.hpl</from>
+      <to>Success</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pl_validar_cadastro.hpl</from>
+      <to>Abort</to>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
   </hops>
   <notepads/>
-  <attributes/>
+  <attributes>
+    <group>
+      <name>debug_plugin</name>
+    </group>
+  </attributes>
 </workflow>

@@ -17,7 +17,7 @@
   <transform>
     <type>TableInput</type>
     <name>Table input</name>
-    <sql>SELECT * FROM public.discentes</sql>
+    <sql>SELECT * FROM public.discentes;</sql>
     <limit>0</limit>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -48,7 +48,7 @@
     <header>Y</header>
     <footer>N</footer>
     <format>DOS</format>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
@@ -74,7 +74,7 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>464</xloc>
+      <xloc>624</xloc>
       <yloc>176</yloc>
     </GUI>
     <partitioning>
