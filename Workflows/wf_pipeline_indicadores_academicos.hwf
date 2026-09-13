@@ -22,116 +22,8 @@
       <description/>
       <type>SPECIAL</type>
       <attributes/>
-      <xloc>144</xloc>
-      <yloc>144</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <filename>${PROJECT_HOME}/PipeLines/pl_carga_cursos.hpl</filename>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <create_parent_folder>Y</create_parent_folder>
-      <set_logfile>Y</set_logfile>
-      <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
-      <logext>log</logext>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <loglevel>Basic</loglevel>
-      <wait_until_finished>Y</wait_until_finished>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <run_configuration>local</run_configuration>
-      <name>pl_carga_cursos.hpl</name>
-      <type>PIPELINE</type>
-      <attributes/>
-      <xloc>304</xloc>
-      <yloc>144</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <filename>${PROJECT_HOME}/PipeLines/pl_carga_matriculas.hpl</filename>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <create_parent_folder>Y</create_parent_folder>
-      <set_logfile>Y</set_logfile>
-      <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
-      <logext>log</logext>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <loglevel>Basic</loglevel>
-      <wait_until_finished>Y</wait_until_finished>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <run_configuration>local</run_configuration>
-      <name>pl_carga_matriculas.hpl</name>
-      <type>PIPELINE</type>
-      <attributes/>
-      <xloc>512</xloc>
-      <yloc>144</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <filename>${PROJECT_HOME}/PipeLines/pl_validar_cadastro.hpl</filename>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <create_parent_folder>Y</create_parent_folder>
-      <set_logfile>Y</set_logfile>
-      <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
-      <logext>log</logext>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <loglevel>Basic</loglevel>
-      <wait_until_finished>Y</wait_until_finished>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <run_configuration>local</run_configuration>
-      <name>pl_validar_cadastro.hpl</name>
-      <type>PIPELINE</type>
-      <attributes/>
-      <xloc>720</xloc>
-      <yloc>144</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <filename>${PROJECT_HOME}/PipeLines/pl_qualidade_privacidade.hpl</filename>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <create_parent_folder>Y</create_parent_folder>
-      <set_logfile>Y</set_logfile>
-      <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
-      <logext>log</logext>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <loglevel>Basic</loglevel>
-      <wait_until_finished>Y</wait_until_finished>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <run_configuration>local</run_configuration>
-      <name>pl_qualidade_privacidade.hpl</name>
-      <type>PIPELINE</type>
-      <attributes/>
-      <xloc>928</xloc>
-      <yloc>144</yloc>
+      <xloc>80</xloc>
+      <yloc>160</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
     </action>
@@ -148,177 +40,300 @@
       <attributes_hac/>
     </action>
     <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Falha no processamento dos cadastros. Consulte o log do pipeline.</logmessage>
+      <name>LOG - Validar Cadastro</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>272</xloc>
+      <yloc>288</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro no carga Historicos. Consulte o log do pipeline.</logmessage>
+      <name>LOG - Historico FALHA</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>480</xloc>
+      <yloc>288</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro processamento Trancamento. Consulte o log do pipeline.</logmessage>
+      <name>LOG - Trancamento FALHA</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>656</xloc>
+      <yloc>288</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <loglevel>Error</loglevel>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro processamento Bolsistas. Verifique o pipeline
+</logmessage>
+      <name>LOG - Bolsista Falha</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <xloc>848</xloc>
+      <yloc>288</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <filename>${PROJECT_HOME}/PipeLines/pl_validar_cadastro.hpl</filename>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <create_parent_folder>N</create_parent_folder>
+      <set_logfile>N</set_logfile>
+      <set_append_logfile>N</set_append_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <wait_until_finished>Y</wait_until_finished>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <run_configuration>local</run_configuration>
+      <name>Validar cadastro</name>
+      <type>PIPELINE</type>
+      <attributes/>
+      <xloc>272</xloc>
+      <yloc>160</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <filename>${PROJECT_HOME}/PipeLines/pl_validar_historico.hpl</filename>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <create_parent_folder>N</create_parent_folder>
+      <set_logfile>N</set_logfile>
+      <set_append_logfile>N</set_append_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <wait_until_finished>Y</wait_until_finished>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <run_configuration>local</run_configuration>
+      <name>Validar historico</name>
+      <type>PIPELINE</type>
+      <attributes/>
+      <xloc>480</xloc>
+      <yloc>160</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <filename>${PROJECT_HOME}/PipeLines/pl_validar_trancamentos.hpl</filename>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <create_parent_folder>N</create_parent_folder>
+      <set_logfile>N</set_logfile>
+      <set_append_logfile>N</set_append_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <wait_until_finished>Y</wait_until_finished>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <run_configuration>local</run_configuration>
+      <name>Validar Trancamento</name>
+      <type>PIPELINE</type>
+      <attributes/>
+      <xloc>656</xloc>
+      <yloc>160</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <filename>${PROJECT_HOME}/PipeLines/pl_validar_bolsistas.hpl</filename>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <create_parent_folder>N</create_parent_folder>
+      <set_logfile>N</set_logfile>
+      <set_append_logfile>N</set_append_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <wait_until_finished>Y</wait_until_finished>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <run_configuration>local</run_configuration>
+      <name>Validar bolsista</name>
+      <type>PIPELINE</type>
+      <attributes/>
+      <xloc>832</xloc>
+      <yloc>160</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
+      <filename>${PROJECT_HOME}/PipeLines/pl_monitoramento_mais_futuro.hpl</filename>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <create_parent_folder>N</create_parent_folder>
+      <set_logfile>N</set_logfile>
+      <set_append_logfile>N</set_append_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <wait_until_finished>Y</wait_until_finished>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <run_configuration>local</run_configuration>
+      <name>Monitoramento Mais Futuro</name>
+      <type>PIPELINE</type>
+      <attributes/>
+      <xloc>1040</xloc>
+      <yloc>160</yloc>
+      <parallel>N</parallel>
+      <attributes_hac/>
+    </action>
+    <action>
       <name>Success</name>
       <description/>
       <type>SUCCESS</type>
       <attributes/>
-      <xloc>1328</xloc>
-      <yloc>144</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <loglevel>Error</loglevel>
-      <logsubject>Indicadores Academicos</logsubject>
-      <logmessage>[FALHA] Erro na carga do catalogo de cursos. Consulte o log do pipeline.</logmessage>
-      <name>LOG - Cursos FALHA</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <xloc>304</xloc>
-      <yloc>288</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <loglevel>Error</loglevel>
-      <logsubject>Indicadores Academicos</logsubject>
-      <logmessage>[FALHA] Erro na carga dos dados academicos. Consulte o log do pipeline.</logmessage>
-      <name>LOG - Matriculas FALHA</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <xloc>512</xloc>
-      <yloc>288</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <loglevel>Error</loglevel>
-      <logsubject>Indicadores Academicos</logsubject>
-      <logmessage>[FALHA] Erro na validacao do cadastro academico. Consulte o log do pipeline.</logmessage>
-      <name>LOG - Validacao FALHA</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <xloc>720</xloc>
-      <yloc>288</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <loglevel>Error</loglevel>
-      <logsubject>Privacidade e Qualidade</logsubject>
-      <logmessage>[FALHA] Erro na normalizacao ou pseudonimizacao do cadastro. Consulte o log tecnico.</logmessage>
-      <name>LOG - Privacidade FALHA</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <xloc>928</xloc>
-      <yloc>288</yloc>
-      <parallel>N</parallel>
-      <attributes_hac/>
-    </action>
-    <action>
-      <loglevel>Basic</loglevel>
-      <logsubject>Indicadores Academicos</logsubject>
-      <logmessage>[SUCESSO] Validacao e tratamento de privacidade concluidos.</logmessage>
-      <name>LOG - Processo OK</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <xloc>1136</xloc>
-      <yloc>144</yloc>
+      <xloc>1248</xloc>
+      <yloc>160</yloc>
       <parallel>N</parallel>
       <attributes_hac/>
     </action>
   </actions>
   <hops>
     <hop>
+      <from>LOG - Validar Cadastro</from>
+      <to>Abort</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>LOG - Historico FALHA</from>
+      <to>Abort</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>LOG - Trancamento FALHA</from>
+      <to>Abort</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>LOG - Bolsista Falha</from>
+      <to>Abort</to>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Start</from>
-      <to>pl_carga_cursos.hpl</to>
+      <to>Validar cadastro</to>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pl_carga_cursos.hpl</from>
-      <to>pl_carga_matriculas.hpl</to>
+      <from>Validar cadastro</from>
+      <to>Validar historico</to>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pl_carga_matriculas.hpl</from>
-      <to>pl_validar_cadastro.hpl</to>
+      <from>Validar historico</from>
+      <to>Validar Trancamento</to>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pl_validar_cadastro.hpl</from>
-      <to>pl_qualidade_privacidade.hpl</to>
+      <from>Validar Trancamento</from>
+      <to>Validar bolsista</to>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pl_carga_cursos.hpl</from>
-      <to>LOG - Cursos FALHA</to>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>LOG - Cursos FALHA</from>
-      <to>Abort</to>
+      <from>Validar bolsista</from>
+      <to>Monitoramento Mais Futuro</to>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pl_carga_matriculas.hpl</from>
-      <to>LOG - Matriculas FALHA</to>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>LOG - Matriculas FALHA</from>
-      <to>Abort</to>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>pl_validar_cadastro.hpl</from>
-      <to>LOG - Validacao FALHA</to>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>LOG - Validacao FALHA</from>
-      <to>Abort</to>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>pl_qualidade_privacidade.hpl</from>
-      <to>LOG - Privacidade FALHA</to>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>LOG - Privacidade FALHA</from>
-      <to>Abort</to>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>pl_qualidade_privacidade.hpl</from>
-      <to>LOG - Processo OK</to>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>LOG - Processo OK</from>
+      <from>Monitoramento Mais Futuro</from>
       <to>Success</to>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Validar cadastro</from>
+      <to>LOG - Validar Cadastro</to>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Validar historico</from>
+      <to>LOG - Historico FALHA</to>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Validar Trancamento</from>
+      <to>LOG - Trancamento FALHA</to>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Validar bolsista</from>
+      <to>LOG - Bolsista Falha</to>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
       <enabled>Y</enabled>
     </hop>
