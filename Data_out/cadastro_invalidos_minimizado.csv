@@ -1,0 +1,59 @@
+matricula_pseudonimizada;cpf_pseudonimizado;nome_pseudonimizado;codigo_curso;curso;campus;situacao_academica;flag_valido;motivos_rejeicao
+;CPF-1a2f738893cc;Pessoa-b64babe8;C01;Engenharia de Software;Campus Central;ATIVO;N;CAMPO_OBRIGATORIO:matricula
+;CPF-f6832864094e;Pessoa-01e7d854;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;CAMPO_OBRIGATORIO:matricula
+;CPF-3560847c4931;Pessoa-eb259c31;C03;Administracao;Campus Sul;FORMADO;N;CAMPO_OBRIGATORIO:matricula
+;CPF-f0778fa70520;Pessoa-88969a1a;C04;Direito;Campus Leste;JUBILADO;N;CAMPO_OBRIGATORIO:matricula
+;CPF-68fa8ae76365;Pessoa-6e71576a;C01;Engenharia de Software;Campus Central;CANCELADO;N;CAMPO_OBRIGATORIO:matricula
+MAT-51a3a3a8b7;;Pessoa-4e34b3f2;C01;Engenharia de Software;Campus Central;ATIVO;N;CAMPO_OBRIGATORIO:cpf
+MAT-8f361f6aa4;;Pessoa-9752ad19;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;CAMPO_OBRIGATORIO:cpf
+MAT-0f53d29e52;;Pessoa-b0e4a399;C03;Administracao;Campus Sul;FORMADO;N;CAMPO_OBRIGATORIO:cpf
+MAT-869b9efcce;;Pessoa-bf9e8997;C04;Direito;Campus Leste;JUBILADO;N;CAMPO_OBRIGATORIO:cpf
+MAT-731ac9b5db;;Pessoa-0bc86bd0;C01;Engenharia de Software;Campus Central;CANCELADO;N;CAMPO_OBRIGATORIO:cpf
+MAT-f17f930009;CPF-d14848eaa75c;;C01;Engenharia de Software;Campus Central;ATIVO;N;CAMPO_OBRIGATORIO:nome
+MAT-0cadf1f9d2;CPF-fd30be5a911d;;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;CAMPO_OBRIGATORIO:nome
+MAT-87345c115d;CPF-a885e77df71c;;C03;Administracao;Campus Sul;FORMADO;N;CAMPO_OBRIGATORIO:nome
+MAT-917883a8b6;CPF-605aa06b89e2;;C04;Direito;Campus Leste;JUBILADO;N;CAMPO_OBRIGATORIO:nome
+MAT-6ebfb7a252;CPF-c72882b36ece;;C01;Engenharia de Software;Campus Central;CANCELADO;N;CAMPO_OBRIGATORIO:nome
+MAT-50e991d90d;CPF-d5996b25e580;Pessoa-3bd8705f;C01;Engenharia de Software;;ATIVO;N;CAMPO_OBRIGATORIO:campus
+MAT-7a63c24e58;CPF-cb00c6dc9f81;Pessoa-afb7e6dc;C02;Ciencia da Computacao;;TRANCADO;N;CAMPO_OBRIGATORIO:campus
+MAT-e0cf46c783;CPF-af352fd55858;Pessoa-6357d88e;C03;Administracao;;FORMADO;N;CAMPO_OBRIGATORIO:campus
+MAT-565e4e79d5;CPF-30384f308e01;Pessoa-0a4c3edb;C04;Direito;;JUBILADO;N;CAMPO_OBRIGATORIO:campus
+MAT-893d17513e;CPF-f5cf1f6a0b7e;Pessoa-c1c7170b;C01;Engenharia de Software;;CANCELADO;N;CAMPO_OBRIGATORIO:campus
+MAT-dd3977dbb5;CPF-1c97c5fcc453;Pessoa-1450b257;C01;Engenharia de Software;Campus Central;;N;CAMPO_OBRIGATORIO:situacao_academica
+MAT-cc196afe01;CPF-c67cece77b9b;Pessoa-85530061;C02;Ciencia da Computacao;Campus Norte;;N;CAMPO_OBRIGATORIO:situacao_academica
+MAT-750d56b07d;CPF-da76a9e8e269;Pessoa-aa46206f;C03;Administracao;Campus Sul;;N;CAMPO_OBRIGATORIO:situacao_academica
+MAT-512d1a8951;CPF-d00438a335ff;Pessoa-31be39b0;C04;Direito;Campus Leste;;N;CAMPO_OBRIGATORIO:situacao_academica
+MAT-75803751a2;CPF-fd5d19f5479e;Pessoa-0a8d4c3e;C01;Engenharia de Software;Campus Central;;N;CAMPO_OBRIGATORIO:situacao_academica
+MAT-8bb0cf6eb9;CPF-31fa56f35d58;Pessoa-4e34b3f2;C01;Engenharia de Software;Campus Central;ATIVO;N;INTEGRIDADE:matricula
+MAT-15e2b0d3c3;CPF-8d06ea96983c;Pessoa-9752ad19;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;INTEGRIDADE:matricula
+MAT-3d66f31308;CPF-59831cdd7032;Pessoa-b0e4a399;C03;Administracao;Campus Sul;FORMADO;N;INTEGRIDADE:matricula
+MAT-8d969eef6e;CPF-1a08a4611d8b;Pessoa-bf9e8997;C04;Direito;Campus Leste;JUBILADO;N;INTEGRIDADE:matricula
+MAT-c775e7b757;CPF-1e26493530f1;Pessoa-0bc86bd0;C01;Engenharia de Software;Campus Central;CANCELADO;N;INTEGRIDADE:matricula
+MAT-41986cb0fa;CPF-06cb79420d23;Pessoa-3bd8705f;C02;Ciencia da Computacao;Campus Norte;ATIVO;N;INTEGRIDADE:matricula
+MAT-d80a4a8f38;CPF-2a3a6962edf6;Pessoa-afb7e6dc;C03;Administracao;Campus Sul;TRANCADO;N;INTEGRIDADE:matricula
+MAT-ac1980d163;CPF-34ce32f4cacd;Pessoa-6357d88e;C04;Direito;Campus Leste;FORMADO;N;INTEGRIDADE:matricula
+MAT-03fe0c79a9;CPF-4e59e4cf38da;Pessoa-0a4c3edb;C01;Engenharia de Software;Campus Central;JUBILADO;N;INTEGRIDADE:matricula
+MAT-c072d885a9;CPF-8bb12811180f;Pessoa-c1c7170b;C02;Ciencia da Computacao;Campus Norte;CANCELADO;N;INTEGRIDADE:matricula
+MAT-28918ca201;CPF-c775e7b757ed;Pessoa-b64babe8;C01;Engenharia de Software;Campus Central;ATIVO;N;INTEGRIDADE:cpf
+MAT-127a52a209;CPF-2a33349e7e60;Pessoa-01e7d854;C02;Ciencia da Computacao;Campus Norte;TRANCADO;N;INTEGRIDADE:cpf
+MAT-ab9b9c825d;CPF-c775e7b757ed;Pessoa-eb259c31;C03;Administracao;Campus Sul;FORMADO;N;INTEGRIDADE:cpf
+MAT-796ca321ad;CPF-15e2b0d3c338;Pessoa-88969a1a;C04;Direito;Campus Leste;JUBILADO;N;INTEGRIDADE:cpf
+MAT-9c5eaca2e9;CPF-bca2b41a2b25;Pessoa-6e71576a;C01;Engenharia de Software;Campus Central;CANCELADO;N;INTEGRIDADE:cpf
+MAT-8fb27000ba;CPF-d2d02ea74de2;Pessoa-4e34b3f2;C02;Ciencia da Computacao;Campus Norte;ATIVO;N;INTEGRIDADE:cpf
+MAT-85d77e90bf;CPF-8a9bcf1e51e8;Pessoa-9752ad19;C03;Administracao;Campus Sul;TRANCADO;N;INTEGRIDADE:cpf
+MAT-36ec4d926b;CPF-f1baafb72e1c;Pessoa-b0e4a399;C04;Direito;Campus Leste;FORMADO;N;INTEGRIDADE:cpf
+MAT-6b7453a0a1;CPF-a5ad7e6d5225;Pessoa-bf9e8997;C01;Engenharia de Software;Campus Central;JUBILADO;N;INTEGRIDADE:cpf
+MAT-7236780ad4;CPF-6b6712c76ce5;Pessoa-0bc86bd0;C02;Ciencia da Computacao;Campus Norte;CANCELADO;N;INTEGRIDADE:cpf
+MAT-9c0d2d2b1f;CPF-15e2b0d3c338;Pessoa-3bd8705f;C03;Administracao;Campus Sul;ATIVO;N;INTEGRIDADE:cpf
+MAT-30b9fc0fc1;CPF-c17c025fb9ed;Pessoa-afb7e6dc;C04;Direito;Campus Leste;TRANCADO;N;INTEGRIDADE:cpf
+MAT-f4a5f61f4e;CPF-c775e7b757ed;Pessoa-6357d88e;C01;Engenharia de Software;Campus Central;FORMADO;N;INTEGRIDADE:cpf
+MAT-7be40a2908;CPF-2a33349e7e60;Pessoa-0a4c3edb;C02;Ciencia da Computacao;Campus Norte;JUBILADO;N;INTEGRIDADE:cpf
+MAT-81d1cb1124;CPF-15e2b0d3c338;Pessoa-c1c7170b;C03;Administracao;Campus Sul;CANCELADO;N;INTEGRIDADE:cpf
+MAT-7ba3e48c4a;CPF-f1ba2d2189a0;Pessoa-1450b257;C01;Engenharia de Software;Campus Central;DESISTENTE;N;INTEGRIDADE:situacao_academica
+MAT-96e40bfd10;CPF-73aa0d4f8c16;Pessoa-85530061;C02;Ciencia da Computacao;Campus Norte;EVADIDO;N;INTEGRIDADE:situacao_academica
+MAT-312b0e641e;CPF-592f3c529b99;Pessoa-aa46206f;C03;Administracao;Campus Sul;ATIVO!;N;INTEGRIDADE:situacao_academica
+MAT-e3151eb28d;CPF-959ad8a0a7c3;Pessoa-6e71576a;C02;Ciencia da Computacao;Campus Norte;INADIMPLENTE;N;INTEGRIDADE:situacao_academica
+MAT-87b28a94f1;CPF-874581a4c48b;Pessoa-9752ad19;C04;Direito;Campus Leste;TRANC;N;INTEGRIDADE:situacao_academica
+MAT-0f8bf3d57e;CPF-6b8b31ae4057;Pessoa-b0e4a399;C01;Engenharia de Software;Campus Central;FORM;N;INTEGRIDADE:situacao_academica
+MAT-bd7d2dbf37;CPF-4416ee890339;Pessoa-bf9e8997;C02;Ciencia da Computacao;Campus Norte;JUB;N;INTEGRIDADE:situacao_academica
+MAT-afc5a36e3b;CPF-0890e908326a;Pessoa-0bc86bd0;C03;Administracao;Campus Sul;CANC;N;INTEGRIDADE:situacao_academica

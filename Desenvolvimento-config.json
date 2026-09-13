@@ -24,16 +24,6 @@
       "name" : "DB_PASSWORD",
       "value" : "Encrypted 2be98afc86aa7f2e49e1cbd738cc2fd8c",
       "description" : ""
-    },
-    {
-      "name" : "DATA_IN",
-      "value" : "",
-      "description" : ""
-    },
-    {
-      "name" : "DATA_OUT",
-      "value" : "",
-      "description" : ""
     }
   ]
 }
