@@ -1,0 +1,3 @@
+matricula;estudante;curso;campus;programa;situacao_beneficio;quantidade_reprovacoes;quantidade_trancamentos;quantidade_ocorrencias;situacao_elegibilidade;acao_recomendada
+20230006;Julia Lima;Ciencia da Computacao;Campus Norte;MAIS FUTURO;ATIVO;1;0;1;ELEGIVEL;MANTER
+20230086;Joao Silva;Engenharia de Software;Campus Central;MAIS FUTURO;ATIVO;6;0;6;ACIMA_DO_LIMITE;POSSIVEL_CANCELAMENTO
