@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <pipeline_version/>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <pipeline_type>Normal</pipeline_type>
+    <pipeline_status>0</pipeline_status>
+    <parameters/>
+    <name>pipeline_contagem_trancamentos</name>
+    <name_sync_with_filename>N</name_sync_with_filename>
+    <description>Conta trancamentos de disciplinas por matrícula e período</description>
+    <created_user>-</created_user>
+    <modified_user>-</modified_user>
+    <created_date>2026/09/13 12:36:04.328</created_date>
+    <modified_date>2026/09/13 12:36:04.328</modified_date>
+  </info>
+  <transform>
+    <type>CsvInput</type>
+    <name>CSV Input</name>
+    <filename>${PROJECT_HOME}/Data_in/historico_escolar.csv</filename>
+    <filename_field/>
+    <include_filename>N</include_filename>
+    <rownum_field/>
+    <header>Y</header>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <encoding>UTF-8</encoding>
+    <newline_possible>N</newline_possible>
+    <schemaDefinition/>
+    <ignoreFields>N</ignoreFields>
+    <fields>
+      <field>
+        <name>matricula</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>periodo</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>disciplina</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>nota</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>situacao</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>data_ocorrencia</name>
+        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <trim_type>none</trim_type>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>96</yloc>
+    </GUI>
+    <description>Leitura do historico_escolar.csv</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>ScriptValueMod</type>
+    <name>Cria Campo Alvo</name>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+</jsScript_script>
+      </jsScript>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+</jsScript_script>
+      </jsScript>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+</jsScript_script>
+      </jsScript>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+</jsScript_script>
+      </jsScript>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+</jsScript_script>
+      </jsScript>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+</jsScript_script>
+      </jsScript>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>
+var target_status = "TRANCADO";
+        </jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>target_status</name>
+        <rename>target_status</rename>
+        <type>String</type>
+        <length>50</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <optimizationLevel>9</optimizationLevel>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>96</yloc>
+    </GUI>
+    <description>Cria campo constante para comparacao segura</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>FilterRows</type>
+    <name>Filter Rows</name>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <operator>-</operator>
+        <leftvalue>situacao</leftvalue>
+        <function>=</function>
+        <rightvalue>target_status</rightvalue>
+        <conditions/>
+      </condition>
+    </compare>
+    <send_true_to>Group by</send_true_to>
+    <send_false_to/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>96</yloc>
+    </GUI>
+    <description>Filtra onde situacao == target_status</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>GroupBy</type>
+    <name>Group by</name>
+    <all_rows>N</all_rows>
+    <directory/>
+    <prefix/>
+    <ignore_aggregate>N</ignore_aggregate>
+    <group>
+      <field>
+        <name>matricula</name>
+      </field>
+      <field>
+        <name>periodo</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>quantidade</aggregate>
+        <subject>matricula</subject>
+        <type>COUNT_ALL</type>
+        <valuefield/>
+      </field>
+      <field>
+        <aggregate>data_ocorrencia</aggregate>
+        <subject>data_ocorrencia</subject>
+        <type>FIRST_INCL_NULL</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>96</yloc>
+    </GUI>
+    <description>Agrupa por matrícula e período, contando ocorrências</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>ScriptValueMod</type>
+    <name>Classifica</name>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>
+var tipo_trancamento = "TRANCADO";
+if (quantidade > 1) {
+    tipo_trancamento = "TRANCADO";
+}
+        </jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>matricula</name>
+        <rename>matricula</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>periodo</name>
+        <rename>periodo</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>tipo_trancamento</name>
+        <rename>tipo_trancamento</rename>
+        <type>String</type>
+        <length>50</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>quantidade</name>
+        <rename>quantidade</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>data_ocorrencia</name>
+        <rename>data_ocorrencia</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <optimizationLevel>9</optimizationLevel>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>96</yloc>
+    </GUI>
+    <description>Define tipo_trancamento baseado na quantidade</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>TextFileOutput</type>
+    <name>Text file output</name>
+    <compression>None</compression>
+    <create_parent_folder>Y</create_parent_folder>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <schema_definition/>
+    <ignore_fields>N</ignore_fields>
+    <file>
+      <name>${PROJECT_HOME}/Data_out/controle_trancamento.csv</name>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extension/>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery/>
+    </file>
+    <fields>
+      <field>
+        <name>matricula</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>periodo</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>quantidade</name>
+        <type>Integer</type>
+        <format/>
+        <length>10</length>
+        <precision>0</precision>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>data_ocorrencia</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>tipo_trancamento</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+    </fields>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>96</yloc>
+    </GUI>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <order>
+    <hop>
+      <from>CSV Input</from>
+      <to>Cria Campo Alvo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cria Campo Alvo</from>
+      <to>Filter Rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter Rows</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
+      <to>Classifica</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Classifica</from>
+      <to>Text file output</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <notepads/>
+  <attributes/>
+  <transform_error_handling/>
+</pipeline>
