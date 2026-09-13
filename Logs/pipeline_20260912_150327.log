@@ -1,8 +1,0 @@
-2026/09/12 15:03:27 - pl_carga_matriculas.hpl - Using run configuration [local]
-2026/09/12 15:03:27 - pl_carga_matriculas - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
-2026/09/12 15:03:27 - pl_carga_matriculas - Execution started for pipeline [pl_carga_matriculas]
-2026/09/12 15:03:27 - Table input.0 - Finished reading query, closing connection.
-2026/09/12 15:03:27 - Table input.0 - Finished processing (I=40, O=0, R=0, W=40, U=0, E=0)
-2026/09/12 15:03:27 - Text file output.0 - Finished processing (I=0, O=41, R=40, W=40, U=0, E=0)
-2026/09/12 15:03:27 - pl_carga_matriculas - Pipeline duration : 0.075 seconds [  0.075" ]
-2026/09/12 15:03:27 - pl_carga_matriculas - Execution finished on a local pipeline engine with run configuration 'local'

@@ -1,6 +1,0 @@
-2026/09/12 14:58:54 - pl_carga_cursos.hpl - Using run configuration [local]
-2026/09/12 14:58:54 - pl_carga_cursos - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
-2026/09/12 14:58:54 - pl_carga_cursos - Execution started for pipeline [pl_carga_cursos]
-2026/09/12 14:58:54 - Table input.0 - Finished reading query, closing connection.
-2026/09/12 14:58:54 - pl_carga_cursos - Pipeline duration : 0.111 seconds [  0.111" ]
-2026/09/12 14:58:54 - pl_carga_cursos - Execution finished on a local pipeline engine with run configuration 'local'
