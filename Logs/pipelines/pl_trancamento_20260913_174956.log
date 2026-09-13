@@ -1,0 +1,15 @@
+2026/09/13 17:49:56 - Validar Trancamento - Using run configuration [local]
+2026/09/13 17:49:56 - pl_validar_trancamentos - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/09/13 17:49:56 - pl_validar_trancamentos - Execution started for pipeline [pl_validar_trancamentos]
+2026/09/13 17:49:56 - Ler cadastro validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_cadastros.csv'
+2026/09/13 17:49:56 - Ler trancamentos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/controle_trancamento.csv'
+2026/09/13 17:49:56 - Ler cadastro validos.0 - Finished processing (I=11, O=0, R=0, W=10, U=0, E=0)
+2026/09/13 17:49:56 - Ler trancamentos.0 - Finished processing (I=79, O=0, R=0, W=78, U=0, E=0)
+2026/09/13 17:49:56 - Aplicar regras trancamento.0 - Optimization level set to 9.
+2026/09/13 17:49:57 - Lookup cadastro valido.0 - Finished processing (I=0, O=0, R=88, W=78, U=0, E=0)
+2026/09/13 17:49:57 - Aplicar regras trancamento.0 - Finished processing (I=0, O=0, R=78, W=78, U=0, E=0)
+2026/09/13 17:49:57 - Trancamento valido?.0 - Finished processing (I=0, O=0, R=78, W=78, U=0, E=0)
+2026/09/13 17:49:57 - Gravar trancamentos rejeitados.0 - Finished processing (I=0, O=72, R=71, W=71, U=0, E=0)
+2026/09/13 17:49:57 - Gravar trancamentos validos.0 - Finished processing (I=0, O=8, R=7, W=7, U=0, E=0)
+2026/09/13 17:49:57 - pl_validar_trancamentos - Pipeline duration : 0.364 seconds [  0.364" ]
+2026/09/13 17:49:57 - pl_validar_trancamentos - Execution finished on a local pipeline engine with run configuration 'local'
