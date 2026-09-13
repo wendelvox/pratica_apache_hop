@@ -45,7 +45,12 @@
   <transform>
     <type>ScriptValueMod</type>
     <name>Normalizar e pseudonimizar</name>
-    <jsScripts><jsScript><jsScript_type>0</jsScript_type><jsScript_name>Privacidade e qualidade</jsScript_name><jsScript_script>function txt(v) {
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Privacidade e qualidade</jsScript_name>
+        <jsScript_script><![CDATA[
+function txt(v) {
   if (v == null) return "";
   return ("" + v).replace(/^\s+|\s+$/g, "");
 }
@@ -56,9 +61,9 @@ function sha256(v) {
   var md = java.security.MessageDigest.getInstance("SHA-256");
   var bytes = md.digest(new java.lang.String(txt(v)).getBytes("UTF-8"));
   var hex = "";
-  for (var i = 0; i &lt; bytes.length; i++) {
-    var h = (bytes[i] &amp; 0xff).toString(16);
-    if (h.length &lt; 2) h = "0" + h;
+  for (var i = 0; i < bytes.length; i++) {
+    var h = (bytes[i] & 0xff).toString(16);
+    if (h.length < 2) h = "0" + h;
     hex += h;
   }
   return hex;
@@ -82,12 +87,15 @@ if (cpf_normalizado === "") motivos.push("CAMPO_OBRIGATORIO:cpf");
 if (nome === "") motivos.push("CAMPO_OBRIGATORIO:nome");
 if (campus === "") motivos.push("CAMPO_OBRIGATORIO:campus");
 if (situacao_academica === "") motivos.push("CAMPO_OBRIGATORIO:situacao_academica");
-if (matricula !== "" &amp;&amp; matricula.match(/^[0-9]{8}$/) == null) motivos.push("INTEGRIDADE:matricula");
-if (cpf_normalizado !== "" &amp;&amp; cpf_normalizado.match(/^[0-9]{11}$/) == null) motivos.push("INTEGRIDADE:cpf");
-if (situacao_academica !== "" &amp;&amp; ",ATIVO,TRANCADO,FORMADO,JUBILADO,CANCELADO,".indexOf("," + situacao_academica + ",") &lt; 0) motivos.push("INTEGRIDADE:situacao_academica");
+if (matricula !== "" && matricula.match(/^[0-9]{8}$/) == null) motivos.push("INTEGRIDADE:matricula");
+if (cpf_normalizado !== "" && cpf_normalizado.match(/^[0-9]{11}$/) == null) motivos.push("INTEGRIDADE:cpf");
+if (situacao_academica !== "" && ",ATIVO,TRANCADO,FORMADO,JUBILADO,CANCELADO,".indexOf("," + situacao_academica + ",") < 0) motivos.push("INTEGRIDADE:situacao_academica");
 
 var flag_valido = motivos.length === 0 ? "Y" : "N";
-var motivos_rejeicao = motivos.join("|");</jsScript></jsScripts>
+var motivos_rejeicao = motivos.join("|");
+        ]]></jsScript_script>
+      </jsScript>
+    </jsScripts>
     <fields>
       <field><name>matricula_pseudonimizada</name><rename>matricula_pseudonimizada</rename><type>String</type><length>-1</length><precision>-1</precision><replace>N</replace></field>
       <field><name>cpf_pseudonimizado</name><rename>cpf_pseudonimizado</rename><type>String</type><length>-1</length><precision>-1</precision><replace>N</replace></field>
