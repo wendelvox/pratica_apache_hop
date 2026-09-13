@@ -101,7 +101,7 @@
       <create_parent_folder>Y</create_parent_folder>
       <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logfile>${PROJECT_HOME}/Logs/pipelines/pl_cadastros</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -128,7 +128,7 @@
       <create_parent_folder>Y</create_parent_folder>
       <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logfile>${PROJECT_HOME}/Logs/pipelines/pl_historico</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -155,7 +155,7 @@
       <create_parent_folder>Y</create_parent_folder>
       <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logfile>${PROJECT_HOME}/Logs/pipelines/pl_trancamento</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -182,7 +182,7 @@
       <create_parent_folder>Y</create_parent_folder>
       <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logfile>${PROJECT_HOME}/Logs/pipelines/pl_bolsista</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -209,7 +209,7 @@
       <create_parent_folder>Y</create_parent_folder>
       <set_logfile>Y</set_logfile>
       <set_append_logfile>N</set_append_logfile>
-      <logfile>${PROJECT_HOME}/Logs/pipeline</logfile>
+      <logfile>${PROJECT_HOME}/Logs/pipelines/pl_monitoramento</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -239,8 +239,9 @@
     </action>
     <action>
       <loglevel>Error</loglevel>
-      <logsubject/>
-      <logmessage/>
+      <logsubject>Indicadores Academicos</logsubject>
+      <logmessage>[FALHA] Erro processamento Monitoramento. Verifique o pipeline
+</logmessage>
       <name>LOG - Monitoramento</name>
       <description/>
       <type>WRITE_TO_LOG</type>

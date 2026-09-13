@@ -1,0 +1,15 @@
+2026/09/13 16:48:03 - Validar bolsista - Using run configuration [local]
+2026/09/13 16:48:03 - pl_validar_bolsistas - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/09/13 16:48:03 - pl_validar_bolsistas - Execution started for pipeline [pl_validar_bolsistas]
+2026/09/13 16:48:03 - Ler cadastro validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_cadastros.csv'
+2026/09/13 16:48:03 - Ler bolsistas.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_in/cadastro_bolsistas.csv'
+2026/09/13 16:48:03 - Ler cadastro validos.0 - Finished processing (I=11, O=0, R=0, W=10, U=0, E=0)
+2026/09/13 16:48:03 - Ler bolsistas.0 - Finished processing (I=41, O=0, R=0, W=40, U=0, E=0)
+2026/09/13 16:48:03 - Aplicar regras bolsa.0 - Optimization level set to 9.
+2026/09/13 16:48:03 - Lookup cadastro valido.0 - Finished processing (I=0, O=0, R=50, W=40, U=0, E=0)
+2026/09/13 16:48:03 - Aplicar regras bolsa.0 - Finished processing (I=0, O=0, R=40, W=40, U=0, E=0)
+2026/09/13 16:48:03 - Bolsa valida?.0 - Finished processing (I=0, O=0, R=40, W=40, U=0, E=0)
+2026/09/13 16:48:03 - Gravar bolsistas validos.0 - Finished processing (I=0, O=7, R=6, W=6, U=0, E=0)
+2026/09/13 16:48:03 - Gravar bolsistas rejeitados.0 - Finished processing (I=0, O=35, R=34, W=34, U=0, E=0)
+2026/09/13 16:48:03 - pl_validar_bolsistas - Pipeline duration : 0.259 seconds [  0.259" ]
+2026/09/13 16:48:03 - pl_validar_bolsistas - Execution finished on a local pipeline engine with run configuration 'local'

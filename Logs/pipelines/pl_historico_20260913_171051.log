@@ -1,0 +1,40 @@
+2026/09/13 17:10:51 - Validar historico - Using run configuration [local]
+2026/09/13 17:10:51 - pl_validar_historico - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/09/13 17:10:51 - pl_validar_historico - Execution started for pipeline [pl_validar_historico]
+2026/09/13 17:10:51 - Ler cadastro validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_cadastros.csv'
+2026/09/13 17:10:51 - Ler cadastro validos.0 - Finished processing (I=11, O=0, R=0, W=10, U=0, E=0)
+2026/09/13 17:10:51 - Ler historico escolar.0 - ERROR: Unexpected error
+2026/09/13 17:10:51 - Ler historico escolar.0 - ERROR: org.apache.hop.core.exception.HopFileException: 
+2026/09/13 17:10:51 - Ler historico escolar.0 - 
+2026/09/13 17:10:51 - Ler historico escolar.0 - An error occurred while creating field mapping
+2026/09/13 17:10:51 - Ler historico escolar.0 - Could not read from "file:///C:/Oficina_pratica_apache_hop/Data_in/historico_escolasr.csv" because it is not a file.
+2026/09/13 17:10:51 - Ler historico escolar.0 - 
+2026/09/13 17:10:51 - Ler historico escolar.0 - Could not read from "file:///C:/Oficina_pratica_apache_hop/Data_in/historico_escolasr.csv" because it is not a file.
+2026/09/13 17:10:51 - Ler historico escolar.0 - 
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.pipeline.transforms.csvinput.CsvInput.readFieldNamesFromFile(CsvInput.java:523)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.pipeline.transforms.csvinput.CsvInput.createFieldMapping(CsvInput.java:479)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.pipeline.transforms.csvinput.CsvInput.openNextFile(CsvInput.java:353)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.pipeline.transforms.csvinput.CsvInput.processRow(CsvInput.java:127)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.pipeline.transform.RunThread.run(RunThread.java:54)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026/09/13 17:10:51 - Ler historico escolar.0 - Caused by: org.apache.commons.vfs2.FileNotFoundException: Could not read from "file:///C:/Oficina_pratica_apache_hop/Data_in/historico_escolasr.csv" because it is not a file.
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.commons.vfs2.provider.AbstractFileObject.getInputStream(AbstractFileObject.java:1202)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.commons.vfs2.provider.AbstractFileObject.getInputStream(AbstractFileObject.java:1187)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.commons.vfs2.provider.DefaultFileContent.buildInputStream(DefaultFileContent.java:257)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.commons.vfs2.provider.DefaultFileContent.getInputStream(DefaultFileContent.java:525)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.core.vfs.HopVfs.getInputStream(HopVfs.java:394)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.hop.pipeline.transforms.csvinput.CsvInput.readFieldNamesFromFile(CsvInput.java:496)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	... 5 more
+2026/09/13 17:10:51 - Ler historico escolar.0 - Caused by: java.io.FileNotFoundException: C:\Oficina_pratica_apache_hop\Data_in\historico_escolasr.csv (O sistema não pode encontrar o arquivo especificado)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at java.base/java.io.FileInputStream.open0(Native Method)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at java.base/java.io.FileInputStream.open(FileInputStream.java:185)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.commons.vfs2.provider.local.LocalFile.doGetInputStream(LocalFile.java:105)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	at org.apache.commons.vfs2.provider.AbstractFileObject.getInputStream(AbstractFileObject.java:1200)
+2026/09/13 17:10:51 - Ler historico escolar.0 - 	... 10 more
+2026/09/13 17:10:51 - Ler historico escolar.0 - Finished processing (I=0, O=0, R=0, W=0, U=0, E=1)
+2026/09/13 17:10:51 - pl_validar_historico - Pipeline detected one or more transforms with errors.
+2026/09/13 17:10:51 - pl_validar_historico - Pipeline is killing the other transforms!
+2026/09/13 17:10:51 - Lookup cadastro valido.0 - Finished processing (I=0, O=0, R=10, W=0, U=0, E=0)
+2026/09/13 17:10:51 - pl_validar_historico - Pipeline duration : 0.153 seconds [  0.153" ]
+2026/09/13 17:10:51 - pl_validar_historico - Execution finished on a local pipeline engine with run configuration 'local'

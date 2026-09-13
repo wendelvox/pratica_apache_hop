@@ -1,0 +1,34 @@
+2026/09/13 17:06:15 - Monitoramento Mais Futuro - Using run configuration [local]
+2026/09/13 17:06:15 - pl_monitoramento_mais_futuro - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/09/13 17:06:15 - pl_monitoramento_mais_futuro - Execution started for pipeline [pl_monitoramento_mais_futuro]
+2026/09/13 17:06:15 - Ler historico valido.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_historico.csv'
+2026/09/13 17:06:15 - Ler historico valido.0 - Finished processing (I=24, O=0, R=0, W=23, U=0, E=0)
+2026/09/13 17:06:15 - Ler bolsistas validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_bolsistas.csv'
+2026/09/13 17:06:15 - Ler bolsistas validos.0 - Finished processing (I=7, O=0, R=0, W=6, U=0, E=0)
+2026/09/13 17:06:15 - Somente reprovacoes.0 - Finished processing (I=0, O=0, R=23, W=23, U=0, E=0)
+2026/09/13 17:06:15 - Ler trancamentos validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_trancamentos.csv'
+2026/09/13 17:06:15 - Ignorar aprovacoes.0 - Finished processing (I=0, O=0, R=17, W=17, U=0, E=0)
+2026/09/13 17:06:15 - Ler trancamentos validos.0 - Finished processing (I=8, O=0, R=0, W=7, U=0, E=0)
+2026/09/13 17:06:15 - Ler cadastro validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_cadastros.csv'
+2026/09/13 17:06:15 - Ler cadastro validos.0 - Finished processing (I=11, O=0, R=0, W=10, U=0, E=0)
+2026/09/13 17:06:15 - Marcar reprovacao apos bolsa.0 - Optimization level set to 9.
+2026/09/13 17:06:15 - Marcar trancamento apos bolsa.0 - Optimization level set to 9.
+2026/09/13 17:06:15 - Lookup data bolsa reprovacao.0 - Finished processing (I=0, O=0, R=8, W=6, U=0, E=0)
+2026/09/13 17:06:15 - Lookup data bolsa trancamento.0 - Finished processing (I=0, O=0, R=9, W=7, U=0, E=0)
+2026/09/13 17:06:15 - Marcar trancamento apos bolsa.0 - Finished processing (I=0, O=0, R=7, W=7, U=0, E=0)
+2026/09/13 17:06:15 - Marcar reprovacao apos bolsa.0 - Finished processing (I=0, O=0, R=6, W=6, U=0, E=0)
+2026/09/13 17:06:15 - Contar reprovacoes.0 - Finished processing (I=0, O=0, R=6, W=5, U=0, E=0)
+2026/09/13 17:06:15 - Somar trancamentos.0 - Finished processing (I=0, O=0, R=7, W=5, U=0, E=0)
+2026/09/13 17:06:16 - Classificar elegibilidade.0 - Optimization level set to 9.
+2026/09/13 17:06:16 - Lookup reprovacoes.0 - Finished processing (I=0, O=0, R=7, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Lookup trancamentos.0 - Finished processing (I=0, O=0, R=7, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Lookup dados cadastro.0 - Finished processing (I=0, O=0, R=12, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Total de ocorrencias.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Classificar elegibilidade.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Distribuir saidas.0 - Finished processing (I=0, O=0, R=2, W=6, U=0, E=0)
+2026/09/13 17:06:16 - Ultrapassou 4 ocorrencias?.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Monitoramento consolidado.0 - Finished processing (I=0, O=3, R=2, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Ocorrencias consolidadas.0 - Finished processing (I=0, O=3, R=2, W=2, U=0, E=0)
+2026/09/13 17:06:16 - Dentro do limite.0 - Finished processing (I=0, O=3, R=2, W=2, U=0, E=0)
+2026/09/13 17:06:16 - pl_monitoramento_mais_futuro - Pipeline duration : 0.592 seconds [  0.592" ]
+2026/09/13 17:06:16 - pl_monitoramento_mais_futuro - Execution finished on a local pipeline engine with run configuration 'local'

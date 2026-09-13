@@ -1,0 +1,15 @@
+2026/09/13 16:49:55 - Validar historico - Using run configuration [local]
+2026/09/13 16:49:55 - pl_validar_historico - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/09/13 16:49:55 - pl_validar_historico - Execution started for pipeline [pl_validar_historico]
+2026/09/13 16:49:55 - Ler cadastro validos.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_out/validos_cadastros.csv'
+2026/09/13 16:49:55 - Ler historico escolar.0 - Header row skipped in file 'C:\Oficina_pratica_apache_hop/Data_in/historico_escolar.csv'
+2026/09/13 16:49:55 - Ler cadastro validos.0 - Finished processing (I=11, O=0, R=0, W=10, U=0, E=0)
+2026/09/13 16:49:55 - Ler historico escolar.0 - Finished processing (I=402, O=0, R=0, W=401, U=0, E=0)
+2026/09/13 16:49:55 - Aplicar regras historico.0 - Optimization level set to 9.
+2026/09/13 16:49:55 - Lookup cadastro valido.0 - Finished processing (I=0, O=0, R=411, W=401, U=0, E=0)
+2026/09/13 16:49:55 - Aplicar regras historico.0 - Finished processing (I=0, O=0, R=401, W=401, U=0, E=0)
+2026/09/13 16:49:55 - Historico valido?.0 - Finished processing (I=0, O=0, R=401, W=401, U=0, E=0)
+2026/09/13 16:49:55 - Gravar historico validos.0 - Finished processing (I=0, O=24, R=23, W=23, U=0, E=0)
+2026/09/13 16:49:55 - Gravar historico rejeitados.0 - Finished processing (I=0, O=379, R=378, W=378, U=0, E=0)
+2026/09/13 16:49:55 - pl_validar_historico - Pipeline duration : 0.276 seconds [  0.276" ]
+2026/09/13 16:49:55 - pl_validar_historico - Execution finished on a local pipeline engine with run configuration 'local'

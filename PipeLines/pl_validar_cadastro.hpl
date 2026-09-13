@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pipeline>
   <info>
-    <capture_transform_performance>N</capture_transform_performance>
+    <capture_transform_performance>Y</capture_transform_performance>
     <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
     <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
     <pipeline_type>Normal</pipeline_type>
