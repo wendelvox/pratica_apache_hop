@@ -1,3 +1,3 @@
-matricula;estudante;curso;campus;programa;situacao_beneficio;quantidade_reprovacoes;quantidade_trancamentos;quantidade_ocorrencias;situacao_elegibilidade;acao_recomendada
-20230006;Julia Lima;Ciencia da Computacao;Campus Norte;MAIS FUTURO;ATIVO;1;0;1;ELEGIVEL;MANTER
-20230086;Joao Silva;Engenharia de Software;Campus Central;MAIS FUTURO;ATIVO;6;0;6;ACIMA_DO_LIMITE;POSSIVEL_CANCELAMENTO
+matricula;estudante;nome;curso;campus;programa;inicio_bolsa_iso;situacao_beneficio;quantidade_reprovacoes;quantidade_trancamentos;quantidade_ocorrencias;situacao_elegibilidade;acao_recomendada
+20230006;Julia Lima;Julia Lima;Ciencia da Computacao;Campus Norte;MAIS FUTURO;2023-09-15;ATIVO;1;0;1;ELEGIVEL;MANTER
+20230086;Joao Silva;Joao Silva;Engenharia de Software;Campus Central;MAIS FUTURO;2024-04-02;ATIVO;2;0;2;ELEGIVEL;MANTER

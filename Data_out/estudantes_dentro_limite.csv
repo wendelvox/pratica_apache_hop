@@ -1,2 +1,3 @@
-matricula;quantidade_reprovacoes;quantidade_trancamentos;quantidade_ocorrencias
-20230006;1        ;0        ;1        
+matricula;estudante;nome;curso;campus;programa;inicio_bolsa_iso;quantidade_reprovacoes;quantidade_trancamentos;quantidade_ocorrencias;situacao_elegibilidade
+20230006;Julia Lima;Julia Lima;Ciencia da Computacao;Campus Norte;MAIS FUTURO;2023-09-15;1;0;1;ELEGIVEL
+20230086;Joao Silva;Joao Silva;Engenharia de Software;Campus Central;MAIS FUTURO;2024-04-02;2;0;2;ELEGIVEL

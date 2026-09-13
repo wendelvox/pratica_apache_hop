@@ -12,7 +12,7 @@
     <created_user>-</created_user>
     <modified_user>-</modified_user>
     <created_date>2026/08/29 18:40:00.000</created_date>
-    <modified_date>2026/08/29 18:40:00.000</modified_date>
+    <modified_date>2026/09/14 00:00:00.000</modified_date>
   </info>
   <transform>
     <type>CsvInput</type>
@@ -114,8 +114,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>224</yloc>
+      <xloc>1264</xloc>
+      <yloc>720</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -225,7 +225,7 @@
     <copies>1</copies>
     <GUI>
       <xloc>80</xloc>
-      <yloc>64</yloc>
+      <yloc>192</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -323,8 +323,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>384</yloc>
+      <xloc>800</xloc>
+      <yloc>144</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -422,8 +422,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>512</yloc>
+      <xloc>672</xloc>
+      <yloc>336</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -454,13 +454,13 @@
         <conditions/>
       </condition>
     </compare>
-    <send_true_to>Contar reprovacoes</send_true_to>
+    <send_true_to>Lookup data bolsa reprovacao</send_true_to>
     <send_false_to>Ignorar aprovacoes</send_false_to>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>64</yloc>
+      <xloc>432</xloc>
+      <yloc>192</yloc>
     </GUI>
     <description>Ocorrencia academica = reprovacao.</description>
     <partitioning>
@@ -476,9 +476,99 @@
     <copies>1</copies>
     <GUI>
       <xloc>608</xloc>
-      <yloc>64</yloc>
+      <yloc>192</yloc>
     </GUI>
     <description/>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>StreamLookup</type>
+    <name>Lookup data bolsa reprovacao</name>
+    <from>Ler bolsistas validos</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>N</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>matricula</name>
+        <field>matricula</field>
+      </key>
+      <value>
+        <name>inicio_bolsa_iso</name>
+        <rename>inicio_bolsa_iso</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>336</yloc>
+    </GUI>
+    <description>Obtém a data de início/inscrição da bolsa para filtrar ocorrências posteriores.</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>ScriptValueMod</type>
+    <name>Marcar reprovacao apos bolsa</name>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>function trimVal(v){
+  return v == null ? "" : ("" + v).replace(/^\s+|\s+$/g, "");
+}
+function parseIsoDate(s){
+  s = trimVal(s);
+  if (s === "") return null;
+  try {
+    var sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+    sdf.setLenient(false);
+    return sdf.parse(s);
+  } catch (e) {
+    return null;
+  }
+}
+var dataOcorr = trimVal(data_ocorrencia_iso);
+var dataBolsa = trimVal(inicio_bolsa_iso);
+var ocorrencia_pos_bolsa = 0;
+if (dataOcorr !== "" &amp;&amp; dataBolsa !== "") {
+  var dOcorr = parseIsoDate(dataOcorr);
+  var dBolsa = parseIsoDate(dataBolsa);
+  if (dOcorr != null &amp;&amp; dBolsa != null &amp;&amp; dOcorr.after(dBolsa)) {
+    ocorrencia_pos_bolsa = 1;
+  }
+}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>ocorrencia_pos_bolsa</name>
+        <rename>ocorrencia_pos_bolsa</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>0</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <optimizationLevel>9</optimizationLevel>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>480</yloc>
+    </GUI>
+    <description>Marca SOMENTE reprovações ocorridas ESTRITAMENTE APÓS o início/inscrição da bolsa (comparação por java.util.Date).</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -496,8 +586,8 @@
     <fields>
       <field>
         <aggregate>quantidade_reprovacoes</aggregate>
-        <subject>matricula</subject>
-        <type>COUNT_ALL</type>
+        <subject>ocorrencia_pos_bolsa</subject>
+        <type>SUM</type>
         <valuefield/>
       </field>
     </fields>
@@ -505,10 +595,100 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>144</yloc>
+      <xloc>432</xloc>
+      <yloc>592</yloc>
     </GUI>
     <description/>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>StreamLookup</type>
+    <name>Lookup data bolsa trancamento</name>
+    <from>Ler bolsistas validos</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>N</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>matricula</name>
+        <field>matricula</field>
+      </key>
+      <value>
+        <name>inicio_bolsa_iso</name>
+        <rename>inicio_bolsa_iso</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>336</yloc>
+    </GUI>
+    <description>Obtém a data de início/inscrição da bolsa para filtrar ocorrências posteriores.</description>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+  </transform>
+  <transform>
+    <type>ScriptValueMod</type>
+    <name>Marcar trancamento apos bolsa</name>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>function trimVal(v){
+  return v == null ? "" : ("" + v).replace(/^\s+|\s+$/g, "");
+}
+function parseIsoDate(s){
+  s = trimVal(s);
+  if (s === "") return null;
+  try {
+    var sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+    sdf.setLenient(false);
+    return sdf.parse(s);
+  } catch (e) {
+    return null;
+  }
+}
+var dataOcorr = trimVal(data_ocorrencia_iso);
+var dataBolsa = trimVal(inicio_bolsa_iso);
+var ocorrencia_pos_bolsa = 0;
+if (dataOcorr !== "" &amp;&amp; dataBolsa !== "") {
+  var dOcorr = parseIsoDate(dataOcorr);
+  var dBolsa = parseIsoDate(dataBolsa);
+  if (dOcorr != null &amp;&amp; dBolsa != null &amp;&amp; dOcorr.after(dBolsa)) {
+    ocorrencia_pos_bolsa = 1;
+  }
+}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>ocorrencia_pos_bolsa</name>
+        <rename>ocorrencia_pos_bolsa</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>0</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <optimizationLevel>9</optimizationLevel>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+    <GUI>
+      <xloc>1072</xloc>
+      <yloc>336</yloc>
+    </GUI>
+    <description>Marca SOMENTE trancamentos ocorridos ESTRITAMENTE APÓS o início/inscrição da bolsa (comparação por java.util.Date).</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -526,8 +706,8 @@
     <fields>
       <field>
         <aggregate>quantidade_trancamentos</aggregate>
-        <subject>matricula</subject>
-        <type>COUNT_ALL</type>
+        <subject>ocorrencia_pos_bolsa</subject>
+        <type>SUM</type>
         <valuefield/>
       </field>
     </fields>
@@ -535,8 +715,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>320</yloc>
+      <xloc>1072</xloc>
+      <yloc>464</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -568,8 +748,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>224</yloc>
+      <xloc>672</xloc>
+      <yloc>592</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -601,8 +781,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>224</yloc>
+      <xloc>1072</xloc>
+      <yloc>592</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -613,8 +793,8 @@
   </transform>
   <transform>
     <type>StreamLookup</type>
-    <name>Lookup bolsista</name>
-    <from>Ler bolsistas validos</from>
+    <name>Lookup dados cadastro</name>
+    <from>Ler cadastro validos</from>
     <input_sorted>N</input_sorted>
     <preserve_memory>N</preserve_memory>
     <sorted_list>N</sorted_list>
@@ -625,20 +805,38 @@
         <field>matricula</field>
       </key>
       <value>
-        <name>estudante</name>
-        <rename>estudante</rename>
+        <name>nome</name>
+        <rename>nome</rename>
         <default/>
         <type>String</type>
       </value>
       <value>
-        <name>programa</name>
-        <rename>programa</rename>
+        <name>cpf_id</name>
+        <rename>cpf_id</rename>
         <default/>
         <type>String</type>
       </value>
       <value>
-        <name>situacao_beneficio</name>
-        <rename>situacao_beneficio</rename>
+        <name>codigo_curso</name>
+        <rename>codigo_curso</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>curso</name>
+        <rename>curso</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>campus</name>
+        <rename>campus</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>situacao_academica</name>
+        <rename>situacao_academica</rename>
         <default/>
         <type>String</type>
       </value>
@@ -646,63 +844,10 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>224</yloc>
+      <xloc>1264</xloc>
+      <yloc>592</yloc>
     </GUI>
-    <description/>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-  </transform>
-  <transform>
-    <type>FilterRows</type>
-    <name>Bolsista encontrado?</name>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <operator>-</operator>
-        <leftvalue>programa</leftvalue>
-        <function>REGEXP</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>.+</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-        <conditions/>
-      </condition>
-    </compare>
-    <send_true_to>Total de ocorrencias</send_true_to>
-    <send_false_to>Sem bolsa</send_false_to>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-    <GUI>
-      <xloc>1000</xloc>
-      <yloc>224</yloc>
-    </GUI>
-    <description>Cruzamento com bolsa valida.</description>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-  </transform>
-  <transform>
-    <type>Dummy</type>
-    <name>Sem bolsa</name>
-    <distribute>N</distribute>
-    <copies>1</copies>
-    <GUI>
-      <xloc>992</xloc>
-      <yloc>352</yloc>
-    </GUI>
-    <description/>
+    <description>Enriquece o bolsista com dados do cadastro (curso, campus, nome, etc).</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -731,8 +876,8 @@
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1224</xloc>
-      <yloc>224</yloc>
+      <xloc>1440</xloc>
+      <yloc>592</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -748,37 +893,15 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>function txt(v) {
+        <jsScript_script>function txt(v){
   if (v == null) return "";
   return ("" + v).replace(/^\s+|\s+$/g, "");
 }
-function nrm(v) {
-  return txt(v).toUpperCase();
-}
-function toInt(v) {
+function toInt(v){
   var s = txt(v);
   if (s === "") return 0;
   var n = parseInt(s, 10);
   return isNaN(n) ? 0 : n;
-}
-function parseDataMulti(valor) {
-  var s = txt(valor);
-  if (s === "") return { ok: false, iso: "", motivo: "CAMPO_OBRIGATORIO:data" };
-  var list = ["yyyy-MM-dd", "dd/MM/yyyy", "dd-MM-yyyy", "yyyy/MM/dd", "dd.MM.yyyy", "yyyyMMdd"];
-  var i, sdf, d, iso;
-  for (i = 0; i &lt; list.length; i++) {
-    try {
-      sdf = new java.text.SimpleDateFormat(list[i]);
-      sdf.setLenient(false);
-      d = sdf.parse(s);
-      iso = new java.text.SimpleDateFormat("yyyy-MM-dd").format(d);
-      return { ok: true, iso: "" + iso, motivo: "" };
-    } catch (e) {}
-  }
-  return { ok: false, iso: "", motivo: "DATA_FORMATO_INVALIDO" };
-}
-function periodoValido(v) {
-  return txt(v).match(/^[0-9]{4}\.[12]$/) != null;
 }
 
 var qOcor = toInt(quantidade_ocorrencias);
@@ -786,7 +909,7 @@ var situacao_elegibilidade = "ELEGIVEL";
 var acao_recomendada = "MANTER";
 if (qOcor > 4) {
   situacao_elegibilidade = "ACIMA_DO_LIMITE";
-  acao_recomendada = "POSSIVEL_CANCELAMENTO";
+  acao_recomendada = "CANCELAR_BOLSA";
 } else if (qOcor === 4) {
   situacao_elegibilidade = "ELEGIVEL_NO_LIMITE";
 }
@@ -815,10 +938,10 @@ if (qOcor > 4) {
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1408</xloc>
-      <yloc>224</yloc>
+      <xloc>1616</xloc>
+      <yloc>592</yloc>
     </GUI>
-    <description>Regra: somente > 4 indica possivel cancelamento.</description>
+    <description>Regra: somente > 4 indica cancelamento da bolsa.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -831,8 +954,8 @@ if (qOcor > 4) {
     <distribute>N</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1552</xloc>
-      <yloc>224</yloc>
+      <xloc>1792</xloc>
+      <yloc>592</yloc>
     </GUI>
     <description/>
     <partitioning>
@@ -854,7 +977,7 @@ if (qOcor > 4) {
         <value>
           <name>constant</name>
           <type>String</type>
-          <text>POSSIVEL_CANCELAMENTO</text>
+          <text>CANCELAR_BOLSA</text>
           <length>-1</length>
           <precision>-1</precision>
           <isnull>N</isnull>
@@ -863,15 +986,15 @@ if (qOcor > 4) {
         <conditions/>
       </condition>
     </compare>
-    <send_true_to>Possivel cancelamento</send_true_to>
+    <send_true_to>Bolsa a cancelar</send_true_to>
     <send_false_to>Dentro do limite</send_false_to>
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1728</xloc>
-      <yloc>64</yloc>
+      <xloc>1792</xloc>
+      <yloc>384</yloc>
     </GUI>
-    <description>quantidade_ocorrencias > 4</description>
+    <description>quantidade_ocorrencias > 4 após início da bolsa</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -937,6 +1060,19 @@ if (qOcor > 4) {
         <roundingType>half_even</roundingType>
       </field>
       <field>
+        <name>nome</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
         <name>curso</name>
         <type>String</type>
         <format/>
@@ -964,6 +1100,19 @@ if (qOcor > 4) {
       </field>
       <field>
         <name>programa</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>inicio_bolsa_iso</name>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -1057,8 +1206,8 @@ if (qOcor > 4) {
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1760</xloc>
-      <yloc>224</yloc>
+      <xloc>2016</xloc>
+      <yloc>592</yloc>
     </GUI>
     <description>Relatorio principal.</description>
     <partitioning>
@@ -1069,7 +1218,7 @@ if (qOcor > 4) {
   </transform>
   <transform>
     <type>TextFileOutput</type>
-    <name>Possivel cancelamento</name>
+    <name>Bolsa a cancelar</name>
     <compression>None</compression>
     <create_parent_folder>Y</create_parent_folder>
     <separator>;</separator>
@@ -1086,7 +1235,7 @@ if (qOcor > 4) {
     <schema_definition/>
     <ignore_fields>N</ignore_fields>
     <file>
-      <name>${PROJECT_HOME}/Data_out/estudantes_possivel_cancelamento.csv</name>
+      <name>${PROJECT_HOME}/Data_out/estudantes_bolsa_a_cancelar.csv</name>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extension/>
       <append>N</append>
@@ -1117,6 +1266,84 @@ if (qOcor > 4) {
       </field>
       <field>
         <name>estudante</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>nome</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>curso</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>campus</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>programa</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>inicio_bolsa_iso</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>situacao_beneficio</name>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -1185,9 +1412,9 @@ if (qOcor > 4) {
     <copies>1</copies>
     <GUI>
       <xloc>2000</xloc>
-      <yloc>64</yloc>
+      <yloc>272</yloc>
     </GUI>
-    <description>Estudantes acima do limite.</description>
+    <description>Lista definitiva de estudantes cuja bolsa deve ser cancelada (ocorrências > 4 APÓS o início da bolsa).</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -1241,6 +1468,71 @@ if (qOcor > 4) {
       </field>
       <field>
         <name>estudante</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>nome</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>curso</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>campus</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>programa</name>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+      </field>
+      <field>
+        <name>inicio_bolsa_iso</name>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -1308,10 +1600,10 @@ if (qOcor > 4) {
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1968</xloc>
-      <yloc>240</yloc>
+      <xloc>2000</xloc>
+      <yloc>464</yloc>
     </GUI>
-    <description>Estudantes com ate 4 ocorrencias.</description>
+    <description>Estudantes com até 4 ocorrências após o início da bolsa.</description>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -1406,8 +1698,8 @@ if (qOcor > 4) {
     <distribute>Y</distribute>
     <copies>1</copies>
     <GUI>
-      <xloc>1760</xloc>
-      <yloc>352</yloc>
+      <xloc>2016</xloc>
+      <yloc>736</yloc>
     </GUI>
     <description>Base numerica da regra.</description>
     <partitioning>
@@ -1424,6 +1716,21 @@ if (qOcor > 4) {
     </hop>
     <hop>
       <from>Somente reprovacoes</from>
+      <to>Lookup data bolsa reprovacao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ler bolsistas validos</from>
+      <to>Lookup data bolsa reprovacao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup data bolsa reprovacao</from>
+      <to>Marcar reprovacao apos bolsa</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Marcar reprovacao apos bolsa</from>
       <to>Contar reprovacoes</to>
       <enabled>Y</enabled>
     </hop>
@@ -1434,11 +1741,26 @@ if (qOcor > 4) {
     </hop>
     <hop>
       <from>Ler trancamentos validos</from>
+      <to>Lookup data bolsa trancamento</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ler bolsistas validos</from>
+      <to>Lookup data bolsa trancamento</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup data bolsa trancamento</from>
+      <to>Marcar trancamento apos bolsa</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Marcar trancamento apos bolsa</from>
       <to>Somar trancamentos</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ler cadastro validos</from>
+      <from>Ler bolsistas validos</from>
       <to>Lookup reprovacoes</to>
       <enabled>Y</enabled>
     </hop>
@@ -1459,27 +1781,17 @@ if (qOcor > 4) {
     </hop>
     <hop>
       <from>Lookup trancamentos</from>
-      <to>Lookup bolsista</to>
+      <to>Lookup dados cadastro</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ler bolsistas validos</from>
-      <to>Lookup bolsista</to>
+      <from>Ler cadastro validos</from>
+      <to>Lookup dados cadastro</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Lookup bolsista</from>
-      <to>Bolsista encontrado?</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Bolsista encontrado?</from>
+      <from>Lookup dados cadastro</from>
       <to>Total de ocorrencias</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Bolsista encontrado?</from>
-      <to>Sem bolsa</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -1509,7 +1821,7 @@ if (qOcor > 4) {
     </hop>
     <hop>
       <from>Ultrapassou 4 ocorrencias?</from>
-      <to>Possivel cancelamento</to>
+      <to>Bolsa a cancelar</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -1520,8 +1832,11 @@ if (qOcor > 4) {
   </order>
   <notepads>
     <notepad>
-      <note>Somente registros validados entram na regra de negocio.
-Cancelamento apenas se quantidade_ocorrencias > 4.</note>
+      <note>Regra de negocio:
+- Contabiliza SOMENTE reprovações/trancamentos ocorridos ESTRITAMENTE APÓS a data de início/inscrição da bolsa (inicio_bolsa_iso).
+- Ocorrências anteriores ao início da bolsa são desconsideradas.
+- Cancelamento da bolsa é acionado quando quantidade_ocorrencias > 4.
+- Fluxo principal parte dos bolsistas válidos para garantir que todos sejam analisados.</note>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -1537,7 +1852,7 @@ Cancelamento apenas se quantidade_ocorrencias > 4.</note>
       <bordercolorblue>80</bordercolorblue>
       <xloc>80</xloc>
       <yloc>8</yloc>
-      <width>460</width>
+      <width>560</width>
       <height>-1</height>
     </notepad>
   </notepads>
